@@ -14,3 +14,6 @@
 Route::get('/', function () {
 	return view("index");
 });
+
+Route::get('/api/{query}', "SearchController@api");
+Route::get('/{query}', "SearchController@index");
