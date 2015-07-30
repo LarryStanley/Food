@@ -10,7 +10,7 @@ function showMore(tableId) {
 	if ($('#' + tableId +' tr').length < showTableRow) {
 	    $("#showMoreButton").hide();
 	}
-	$(".table").find('tr').each(function (i, el) {
+	$('#' + tableId).find('tr').each(function (i, el) {
 	   if ( i < showTableRow) {
 	        $(this).show();
 	    }
@@ -32,7 +32,7 @@ function search() {
 				transform: 'translate(-50%, 0%)'
 			}, "slow", function() {
 				$.each(data, function(index, item) {
-					var result = '<div class="well" id="result"><h2>'+ item['name'] +'</h2><hr><ul><li>電話：'+ item['telephone'] +'</li><li>'+ item['address'] +'</li><li>'+ type[item['type']] +'</li><li>'+ item['togo'] +'</li></ul>';
+					var result = '<div class="well animated fadeIn" id="result"><h2>'+ item['name'] +'</h2><hr><ul><li>電話：'+ item['telephone'] +'</li><li>地址：'+ item['address'] +'</li><li>類型：'+ type[item['type']] +'</li><li>外送：'+ item['togo'] +'</li></ul>';
 					result += '<h3>菜單</h3>';
 					result += '<table class="table table-striped table-hover" id="'+ index +'"><thead><tr><td>品項</td><td>價錢</td><td>備註</td></tr></thead><tbody>';
 					$.each(item['menu'], function(key, food) {
