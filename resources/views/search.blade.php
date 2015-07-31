@@ -7,7 +7,7 @@
 		<input type="text" class="form-control" placeholder="立即查詢餐廳 例如：樂活堡" style="color: white" id="searchInput">
 		<button class="btn btn-default pull-right" style="color: white" onclick="search()">查詢</button>
 	</div>
-	<div class="well" id="result">
+	<div class="well" id="detailResult">
 		<div id="info">
 			<h2><?php echo $name;?></h2>
 			<hr>

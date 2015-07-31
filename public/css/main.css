@@ -81,10 +81,6 @@ html, body {
     margin: 1em 0; padding: 0; 
 }
 
-#result table {
-	width: 100%;
-}
-
 #loading {
 	margin-top: 15px;
 }
@@ -96,26 +92,36 @@ html, body {
 	margin-top: -18px;
 	right: 10px;
 }
+
+#detailResult {
+	padding: 0px 0px 0px 0px;
+	margin-top: 80px;
+}
+
+#detailResult table {
+	width: 100%;
+}
+
 #info {
 	background-color: #0277BD;
 	color: white;
 	padding: 10px 20px 20px 20px;
-	position: absolute;
+	position: relative;
 	top: 0;
 	right: 0;
 	width: 100%;
+	margin: 0px 0px 0px 0px;
 }
 
 #comments {
 	background-color: #00838F;
 	color: white;
 	padding: 10px 20px 20px 20px;
-	position: absolute;
+	position: relative;
 	right: 0;
 	width: 100%;
-	margin-bottom: 50px;
+	margin: 0px 0px 0px 0px;
 }
 
 #menu {
-	margin-top: 230px;
-}
+	padding: 10px 20px 20px 20px;

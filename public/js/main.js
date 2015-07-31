@@ -33,6 +33,7 @@ function search() {
 	$("#add_food").remove();
 	$("#search").append("<div id='loading'>資料查詢中...</div>");
 	$("#result").remove();
+	$("#detailResult").remove();
 	var query = "/api/" + $("#searchInput").val();
 	$.getJSON( query, function( data ) {
 		$("#loading").remove();
