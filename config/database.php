@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,7 +84,17 @@ return [
             'charset'  => 'utf8',
             'prefix'   => '',
         ],
-
+        'mongodb' => array(
+            'driver'   => 'mongodb',
+            'host'     => 'localhost',
+            'port'     => 65147,
+            'username' => 'food',
+            'password' => '! @ # $ % ^ & * ( ) ',
+            'database' => 'Food',
+            'options' => array(
+                'db' => 'Food'
+            )
+        ),
     ],
 
     /*

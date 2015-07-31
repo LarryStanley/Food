@@ -9,6 +9,8 @@ html, body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd2124', endColorstr='#ff6944', GradientType=1 );
 	height: 100%;
 	width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 	color:white;
 }
@@ -41,6 +43,14 @@ html, body {
 	}
 }
 
+.top {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -10%);
+}
+
+
 .center {
 	position: absolute;
 	top: 40%;
@@ -58,7 +68,60 @@ html, body {
 	color: white;
 }
 
-.material-input:focus, .form-control:focus, .form-control.focus {
-	background-image: linear-gradient(white, white), linear-gradient(white, white);
-	box-shadow: none;
+#result {
+	margin-top: 80px;
+	position: relative;
 }
+
+.well hr { 
+	display: block; 
+	height: 0.1px;
+    border: 0; 
+    border-top: 1px solid white;
+    margin: 1em 0; padding: 0; 
+}
+
+#loading {
+	margin-top: 15px;
+}
+
+.seeMore {
+	position: absolute;
+	height: 36px;
+	top: 50%;
+	margin-top: -18px;
+	right: 10px;
+}
+
+#detailResult {
+	padding: 0px 0px 0px 0px;
+	margin-top: 80px;
+}
+
+#detailResult table {
+	width: 100%;
+}
+
+#info {
+	background-color: #0277BD;
+	color: white;
+	padding: 10px 20px 20px 20px;
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+}
+
+#comments {
+	background-color: #00838F;
+	color: white;
+	padding: 10px 20px 20px 20px;
+	position: relative;
+	right: 0;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+}
+
+#menu {
+	padding: 10px 20px 20px 20px;
