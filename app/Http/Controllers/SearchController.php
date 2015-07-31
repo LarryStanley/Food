@@ -10,9 +10,17 @@ class SearchController extends Controller
 	public function index($query) {
 		$type = array(
 			"dine" => "午晚餐",
+			"午晚餐" => "午晚餐",
 			"drink" => "飲料",
-			"breakfast" => "早餐");
+			"飲料" => "飲料",
+			"breakfast" => "早餐",
+			"早餐" => "早餐");
 		$data = DB::collection('Info')->where("name", $query)->first();
+
+		$menu = array();
+		if (!empty($data['menu']))
+			$menu = $data['menu'];
+
 		return view("search", array(
 			"title" => $data['name']." - 中大美食",
 			"name" => $data['name'],
@@ -20,7 +28,7 @@ class SearchController extends Controller
 			"type" => $type[$data['type']],
 			"address" => $data['address'],
 			"togo" => $data['togo'],
-			"menu" => $data['menu']));
+			"menu" => $menu));
 	}
 
 	public function api($query) {

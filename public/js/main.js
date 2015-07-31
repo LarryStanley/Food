@@ -48,6 +48,7 @@ function search() {
 					result += '</tbody></table><button class="btn btn-flat btn-info" onclick="showMore('+ index +')" id="showMoreButton">顯示更多</button></div>';
 					$("#search").append(result);
 				});
+				$("#search").append('<p>找不到你要的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>');
 			});
 		}
 	});

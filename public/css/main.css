@@ -72,7 +72,7 @@ html, body {
 	margin-top: 80px;
 }
 
-#result hr { 
+.well hr { 
 	display: block; 
 	height: 0.1px;
     border: 0; 

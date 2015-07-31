@@ -17,16 +17,17 @@
 			<li>外送：<?php echo $togo;?></li>
 		</ul>
 		<h3>菜單</h3>
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<td>品項</td>
-					<td>價錢</td>
-					<td>備註</td>
-				</tr>
-			</thead>
-			<tbody>
-				<?php 
+			<?php
+				if (empty($menu[0]['category_name'])) {
+					echo '<table class="table table-striped table-hover">
+							<thead>
+								<tr>
+									<td>品項</td>
+									<td>價錢</td>
+									<td>備註</td>
+								</tr>
+							</thead>
+							<tbody>'; 
 					foreach ($menu as $index => $item) {
 						if ($index < 10)
 							echo "<tr>";
@@ -36,11 +37,42 @@
 						echo "<td>".$item['price']."</td>";
 						echo "<td>".$item['note']."</td>";
 						echo "</tr>";
+					}	
+					echo '</tbody>
+						</table>
+						<button class="btn btn-flat btn-info" onclick="showMore()" id="showMoreButton">顯示更多</button>';
+				} else {
+					foreach ($menu as $index => $category) {
+						echo '<h4>'.$category['category_name'].'</h4>';
+						if (!empty($category['note']))
+							echo '<p>'.$category['note'].'</p>';
+						echo '<table class="table table-striped table-hover">
+							<thead>
+								<tr>
+									<td>品項</td>
+									<td>價錢</td>
+									<td>備註</td>
+								</tr>
+							</thead>
+							<tbody>'; 
+						foreach ($category['items'] as $key => $item) {
+							if ($key < 10)
+								echo "<tr>";
+							else
+								echo "<tr style='display: none;'>";
+							echo "<td>".$item['name']."</td>";
+							echo "<td>".$item['price']."</td>";
+							if (!empty($item['note']))
+								echo "<td>".$item['note']."</td>";
+							else
+								echo "<td></td>";
+							echo "</tr>";
+						}	
+						echo '</tbody>
+							</table>';
 					}
-				?>
-			</tbody>
-		</table>
-		<button class="btn btn-flat btn-info" onclick="showMore()" id="showMoreButton">顯示更多</button>
+				}
+			?>
 	</div>
 </div>
 @stop

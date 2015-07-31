@@ -14,6 +14,8 @@
 Route::get('/', function () {
 	return view("index");
 });
-
+Route::get('/add-food', "AddController@index");
+Route::post('/add-food', "AddController@post");
+Route::get('/add-food/thanks', "AddController@thanks");
 Route::get('/api/{query}', "SearchController@api");
 Route::get('/{query}', "SearchController@index");
