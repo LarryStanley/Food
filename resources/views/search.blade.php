@@ -89,7 +89,7 @@
 				if (count($comments)) {
 					
 				}else
-					echo "<p>目前暫無評論</p>";
+					echo "<p>目前暫無評論<button class='btn btn-flat btn-default' style='color: white'>新增評論</button></p>";
 			?>
 		</div>
 	</div>

@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="_token" content="{!! csrf_token() !!}"/>
-
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta property="og:title" content="<?php if (empty($title)) echo "中大美食"; else echo $title;?>" />
 	<meta property="og:site_name" content="<?php if (empty($title)) echo "中大美食"; else echo $title;?>"/>
 	<meta property="og:url" content="http://food.fbstats.info/<?php if(!empty($name)) echo $name; ?>"/>
