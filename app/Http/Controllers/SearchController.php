@@ -20,6 +20,13 @@ class SearchController extends Controller
 		$menu = array();
 		if (!empty($data['menu']))
 			$menu = $data['menu'];
+		$note = '';
+		if (!empty($data['note']))
+			$note = $data['note'];
+
+		$comments = array();
+		if (!empty($data['comments']))
+			$comments = $data['comments'];
 
 		return view("search", array(
 			"title" => $data['name']." - 中大美食",
@@ -28,6 +35,8 @@ class SearchController extends Controller
 			"type" => $type[$data['type']],
 			"address" => $data['address'],
 			"togo" => $data['togo'],
+			"note" => $note,
+			"comments" => $comments,
 			"menu" => $menu));
 	}
 

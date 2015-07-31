@@ -70,13 +70,14 @@ html, body {
 
 #result {
 	margin-top: 80px;
+	position: relative;
 }
 
 .well hr { 
 	display: block; 
 	height: 0.1px;
     border: 0; 
-    border-top: 1px solid #757575;
+    border-top: 1px solid white;
     margin: 1em 0; padding: 0; 
 }
 
@@ -86,4 +87,35 @@ html, body {
 
 #loading {
 	margin-top: 15px;
+}
+
+.seeMore {
+	position: absolute;
+	height: 36px;
+	top: 50%;
+	margin-top: -18px;
+	right: 10px;
+}
+#info {
+	background-color: #0277BD;
+	color: white;
+	padding: 10px 20px 20px 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+}
+
+#comments {
+	background-color: #0277BD;
+	color: white;
+	padding: 10px 20px 20px 20px;
+	position: absolute;
+	right: 0;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+#menu {
+	margin-top: 230px;
 }
