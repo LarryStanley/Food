@@ -59,7 +59,7 @@ function search() {
 						result += '<div class="well animated fadeIn result" id="result"><h2 style="display:inline">'+ item['name'] +'</h2><a href="/'+ item['name'] +'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a></div>';
 						$("#search").append(result);
 					});
-					$("#search").append('<p id="add_food">找不到你要的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>');
+					$("#search").append('<p id="add_food">找不到你知道的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>');
 				});
 			}
 		});

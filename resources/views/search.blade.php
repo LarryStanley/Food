@@ -103,7 +103,7 @@
 						echo $result;				
 					}
 					echo "</div>";
-					if (count($comments) > 0)
+					if (count($comments) > 1)
 						echo "<button class='btn btn-flat btn-default' style='color: white' id='showMoreCommentButton' onclick='showMoreComment()'>更多評論</button>";
 					echo $newCommentButton;
 				}else
@@ -111,6 +111,7 @@
 			?>
 		</div>
 	</div>
+	<p id="add_food">找不到你知道的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>
 </div>
 <div class="modal fade" id="addCommentModal" tabindex="-1" role="dialog" aria-labelledby="addCommentModalLabel">
 	<div class="modal-dialog">

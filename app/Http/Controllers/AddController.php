@@ -22,7 +22,7 @@ class AddController extends Controller
 
 		// check add same
 		$previousData = DB::collection("Info")->where("name", Input::get("name"))->first();
-		if ($previousData || !Inpute::file('name')) {
+		if ($previousData) {
 			$message = "非常感謝您的新增，但是「<a href='/".$previousData['name']."'>".$previousData['name']."</a>」有新增過囉！<br>";
 
 			return view("add-thanks", array("message" => $message));
@@ -50,14 +50,14 @@ class AddController extends Controller
 						"togo" => strip_tags(Input::get('togo')),
 						"record_user" => $userData,
 						"menu_file_url" =>  $filename.".".$fileType[count($fileType) - 1],
-						"prove" => false
+						"prove" => 'false'
 					);
 					DB::collection('Info')->insert($data);
 
 					$message = "感謝您的新增，讓我們的資料更加豐富";
 					$message .= "請給我們一點時間審核，審核完後您可至「<a href='/".Input::get('name')."'>".Input::get('name')."</a>」查看";
 
-					return view("add-thanks", array("message" => "感謝您的新增，讓我們的資料更加豐富"));
+					return view("add-thanks", array("message" => $message));
 				}else
 					return view("add-thanks", array("message" => "感謝您的新增，但您的菜單似乎有點問題喔!<br>您的菜單格式為：".$fileType[count($fileType) - 1]." <a href=".URL::previous()." onclick='history.back()'>更改菜單</a>"));
 			} else {

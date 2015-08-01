@@ -3,6 +3,9 @@
 @section("content")
 <div class="container">
 	<div class="top" id='search' >
+		<div id="title">
+			<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
+		</div>
 		<div class="well" style="overflow: auto">
 			<h1>菜單格式說明</h1>
 			<hr>
