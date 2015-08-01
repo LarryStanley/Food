@@ -2,7 +2,9 @@
 
 @section("content")
 <div class="top" id="search">
-	<h1  style="display:inline">中大美食</h1> beta (其實沒有)
+	<div id="title">
+		<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
+	</div>
 	<div class="form-group-material-grey-400">
 		<input type="text" class="form-control" placeholder="立即查詢餐廳 例如：樂活堡" style="color: white" id="searchInput">
 		<button class="btn btn-default pull-right" style="color: white" onclick="search()">查詢</button>
@@ -90,18 +92,18 @@
 					echo "<div id='commnet' class='container'>";
 					foreach ($comments as $index => $comment) {
 						$result = '';
-						if ($index < 3)
+						if ($index < 1)
 							$result = "<div class='row'>";
 						else
 							$result = "<div style='display: none' class='row'>";
-						$result .= "<div class='col-sm-1'><img src='http://graph.facebook.com/".$comment['user']['id']."/picture?type=square' class='img-circle' style='margin-top: 5px'></div>";
+						$result .= "<div class='col-sm-1'><a href='".$comment['user']['link']."' target='_blank'><img src='http://graph.facebook.com/".$comment['user']['id']."/picture?type=square' class='img-circle' style='margin-top: 5px'></a></div>";
 						$result .= "<div class='col-sm-8'><h4>".$comment['user']['name']."</h4>";
 						$result .= "<p>".$comment['comment']."</p></div></div>";
 
 						echo $result;				
 					}
 					echo "</div>";
-					if (count($comments) > 2)
+					if (count($comments) > 0)
 						echo "<button class='btn btn-flat btn-default' style='color: white' id='showMoreCommentButton' onclick='showMoreComment()'>更多評論</button>";
 					echo $newCommentButton;
 				}else
@@ -122,6 +124,7 @@
 						<textarea class="form-control" rows="5" name="comment"></textarea>
 						<input type="hidden" name="food_name" value="<?php echo $name; ?>">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<p>您將用Facebook身份對「<?php echo $name;?>」進行評論</p>
 	      		</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-flat btn-default" data-dismiss="modal">取消</button>

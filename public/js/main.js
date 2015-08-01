@@ -32,33 +32,38 @@ function showMoreTable (tableId) {
 }
 
 function search() {
-	$("#loading").remove();
-	$("#add_food").remove();
-	$("#search").append("<div id='loading'>資料查詢中...</div>");
-	$("#result").remove();
-	$("#detailResult").remove();
-	var query = "/api/" + $("#searchInput").val();
-	$.getJSON( query, function( data ) {
+	if (!$("searchInput").val()){
 		$("#loading").remove();
-		if (data.length === 0) {
-			$("#search").append("<div id='loading'>查無資料</div>");
-		}else {
-			$('#search').animate({
-				top: '15%', 
-				transform: 'translate(-50%, -15%)'
-			}, "slow", function() {
-				$.each(data, function(index, item) {
-					var result = '';
-					if (index)
-					result += '<div class="well animated fadeIn" id="result" style="margin-top: 20px"><h2 style="display:inline">'+ item['name'] +'</h2><a href="/'+ item['name'] +'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a></div>';
-					else
-					result += '<div class="well animated fadeIn" id="result"><h2 style="display:inline">'+ item['name'] +'</h2><a href="/'+ item['name'] +'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a></div>';
-					$("#search").append(result);
-				});
+		$("#add_food").remove();
+		$("#search").append("<div id='loading'>資料查詢中...</div>");
+		$("body").find(".result").each(function(i, el) {
+			$(this).remove();
+		});
+		$("#detailResult").remove();
+		var query = "/api/" + $("#searchInput").val();
+		$.getJSON( query, function( data ) {
+			$("#loading").remove();
+			if (data.length === 0) {
+				$("#search").append("<div id='loading'>查無資料</div>");
 				$("#search").append('<p id="add_food">找不到你要的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>');
-			});
-		}
-	});
+			}else {
+				$('#search').animate({
+					top: '15%', 
+					transform: 'translate(-50%, -15%)'
+				}, "slow", function() {
+					$.each(data, function(index, item) {
+						var result = '';
+						if (index)
+						result += '<div class="well animated fadeIn result" id="result" style="margin-top: 20px"><h2 style="display:inline">'+ item['name'] +'</h2><a href="/'+ item['name'] +'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a></div>';
+						else
+						result += '<div class="well animated fadeIn result" id="result"><h2 style="display:inline">'+ item['name'] +'</h2><a href="/'+ item['name'] +'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a></div>';
+						$("#search").append(result);
+					});
+					$("#search").append('<p id="add_food">找不到你要的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>');
+				});
+			}
+		});
+	}
 }
 
 function showMoreComment() {

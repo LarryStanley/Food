@@ -1,9 +1,9 @@
 @extends("default")
 
 @section("content")
-<div class="center" id="search">
+<div class="top" id="search">
 	<div id="title">
-		<a href="/"><h1 style="display:inline">中大美食</h1> beta (其實沒有)</a>
+		<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
 	</div>
 	<div class="form-group-material-grey-400">
 		<input type="text" class="form-control" placeholder="立即查詢餐廳 例如：樂活堡" style="color: white" id="searchInput">
@@ -38,5 +38,16 @@
 			</div>
 		</div>
 	</div>
+	<?php 
+		foreach ($results as $index => $value) {
+			$result = '';
+			if ($index > 0)
+				$result .= '<div class="well result" id="result" style="margin-top: 20px">';
+			else
+				$result .= '<div class="well result" id="result">';
+			$result .= '<a href="/'.$value['name'].'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a>';
+			echo $result.'<h2 stlye="display: inline">'.$value['name'].'</h2></div>';
+		}
+	?>
 </div>
 @stop

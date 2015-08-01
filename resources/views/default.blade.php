@@ -10,13 +10,13 @@
 	<meta property="og:url" content="http://food.fbstats.info/<?php if(!empty($name)) echo $name; ?>"/>
 	<meta property="og:description" content="
 		<?php
-			if (!empty($title)) echo $title;
 			if (!empty($name)) echo $name;
+			else echo "立即查詢中大附近美食（不用找了，其實沒有）";
 			if (!empty($telephone)) echo $telephone;
 			if (!empty($type)) echo $type;
 			if (!empty($address)) echo $address;
 		?>" />
-	<meta property="og:image" content=""/>
+	<meta property="og:image" content="http://food.fbstats.info/image/indexMetaImage.png"/>
 	<meta property="og:type" content="article" />
 
 	<title>
@@ -30,6 +30,7 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/animate.css">
 	<link rel="stylesheet" href="/css/main.css">
 

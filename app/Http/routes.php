@@ -15,12 +15,20 @@ Route::get('/', function () {
 	return view("index");
 });
 
+Route::get('/menu-format', function() {
+	return view("menu-format");
+});
+
+Route::get('/breakfast', "SearchController@showBreakfast");
+Route::get('/dine', "SearchController@showDine");
+Route::get('/drink', "SearchController@showDrink");
+Route::get('/midnight-snack', "SearchController@showMidnightSnack");
+
 Route::get('/auth/facebook', "CommentController@facebookLogin");
 Route::post('/add-comment', "CommentController@addComment");
 
 Route::get('/add-food', "AddController@index");
 Route::post('/add-food', "AddController@post");
-Route::get('/add-food/thanks', "AddController@thanks");
 
 Route::get('/api/{query}', "SearchController@api");
 Route::get('/{query}', "SearchController@index");
