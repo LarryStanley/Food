@@ -4,6 +4,7 @@ use DB;
 use App\User;
 use App\Http\Controllers\Controller;
 use Input;
+use Session;
 
 class SearchController extends Controller
 {
@@ -26,7 +27,14 @@ class SearchController extends Controller
 
 		$comments = array();
 		if (!empty($data['comments']))
-			$comments = $data['comments'];
+			$comments = array_reverse($data['comments']);
+
+		$commentButton = '';
+		if (!Session::get('facebookId'))
+			$commentButton = "<a class='btn btn-flat btn-default' style='color: white' href='/auth/facebook'>登入新增評論</a>";
+		else
+			$commentButton = '<button type="button" class="btn btn-flat btn-default" data-toggle="modal" data-target="#addCommentModal" style="color:white">新增評論</button>';
+			
 
 		return view("search", array(
 			"title" => $data['name']." - 中大美食",
@@ -37,6 +45,7 @@ class SearchController extends Controller
 			"togo" => $data['togo'],
 			"note" => $note,
 			"comments" => $comments,
+			"newCommentButton" => $commentButton,
 			"menu" => $menu));
 	}
 

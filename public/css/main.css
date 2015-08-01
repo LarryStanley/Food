@@ -1,37 +1,40 @@
 html, body {
-	background: rgba(253,33,36,1);
-	background: -moz-linear-gradient(45deg, rgba(253,33,36,1) 0%, rgba(255,105,68,1) 100%);
-	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(253,33,36,1)), color-stop(100%, rgba(255,105,68,1)));
-	background: -webkit-linear-gradient(45deg, rgba(253,33,36,1) 0%, rgba(255,105,68,1) 100%);
-	background: -o-linear-gradient(45deg, rgba(253,33,36,1) 0%, rgba(255,105,68,1) 100%);
-	background: -ms-linear-gradient(45deg, rgba(253,33,36,1) 0%, rgba(255,105,68,1) 100%);
-	background: linear-gradient(45deg, rgba(253,33,36,1) 0%, rgba(255,105,68,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd2124', endColorstr='#ff6944', GradientType=1 );
+	background: #f6270c;
+	background: -moz-linear-gradient(left, rgba(246,41,12,1) 0%, rgba(241,111,92,1) 0%, rgba(219,57,86,1) 66%, rgba(219,57,86,1) 84%, rgba(219,57,86,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(246,41,12,1)), color-stop(0%, rgba(241,111,92,1)), color-stop(66%, rgba(219,57,86,1)), color-stop(84%, rgba(219,57,86,1)), color-stop(100%, rgba(219,57,86,1)));
+	background: -webkit-linear-gradient(left, rgba(246,41,12,1) 0%, rgba(241,111,92,1) 0%, rgba(219,57,86,1) 66%, rgba(219,57,86,1) 84%, rgba(219,57,86,1) 100%);
+	background: -o-linear-gradient(left, rgba(246,41,12,1) 0%, rgba(241,111,92,1) 0%, rgba(219,57,86,1) 66%, rgba(219,57,86,1) 84%, rgba(219,57,86,1) 100%);
+	background: -ms-linear-gradient(left, rgba(246,41,12,1) 0%, rgba(241,111,92,1) 0%, rgba(219,57,86,1) 66%, rgba(219,57,86,1) 84%, rgba(219,57,86,1) 100%);
+	background: linear-gradient(to right, rgba(246,41,12,1) 0%, rgba(241,111,92,1) 0%, rgba(219,57,86,1) 66%, rgba(219,57,86,1) 84%, rgba(219,57,86,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6290c', endColorstr='#db3956', GradientType=1 );
+		
 	height: 100%;
 	width: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+	background-color: #ED4A2D;
 
 	color:white;
 }
 
 @media (min-width: 1200px) {
 	#search {
-		width: 800px;
+		width: 1170px;
 		height: 195px;
 	}
 }
 
 @media (min-width: 992px) {
 	#search {
-		width: 750px;
+		width: 970px;
 		height: 195px;
 	}
 }
 
 @media (min-width: 758px) {
 	#search {
-		width: 700px;
+		width: 750px;
 		height: 195px;
 	}
 }
@@ -125,3 +128,8 @@ html, body {
 
 #menu {
 	padding: 10px 20px 20px 20px;
+}
+
+#addCommentModal {
+	color: #424242;
+}

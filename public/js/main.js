@@ -1,3 +1,4 @@
+
 var showTableRow = 11;
 var showTable = 0;
 var type = {
@@ -26,6 +27,8 @@ function showMoreTable (tableId) {
 		$("#"+tableId+" p").show();
 		$("#"+tableId+" table").show();
 	}
+
+	event.preventDefault();
 }
 
 function search() {
@@ -58,7 +61,17 @@ function search() {
 	});
 }
 
+function showMoreComment() {
+	$('#commnet').find('.row').each(function (i, el) {
+        $(this).show();
+	});
+
+	$('#showMoreCommentButton').hide();
+}
+
 $(document).keypress(function(e) {
-	if(e.which == 13)
-		search();
+	if(e.which == 13){
+		if (!$('#addCommentModal').hasClass('in'))
+			search();
+	}
 });

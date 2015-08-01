@@ -14,8 +14,13 @@
 Route::get('/', function () {
 	return view("index");
 });
+
+Route::get('/auth/facebook', "CommentController@facebookLogin");
+Route::post('/add-comment', "CommentController@addComment");
+
 Route::get('/add-food', "AddController@index");
 Route::post('/add-food', "AddController@post");
 Route::get('/add-food/thanks', "AddController@thanks");
+
 Route::get('/api/{query}', "SearchController@api");
 Route::get('/{query}', "SearchController@index");
