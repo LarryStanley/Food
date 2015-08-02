@@ -9,13 +9,6 @@ use Session;
 class SearchController extends Controller
 {
 	public function index($query) {
-		$type = array(
-			"dine" => "午晚餐",
-			"午晚餐" => "午晚餐",
-			"drink" => "飲料",
-			"飲料" => "飲料",
-			"breakfast" => "早餐",
-			"早餐" => "早餐");
 		$data = DB::collection('Info')->where("name", $query)->first();
 		if ($data) {
 			if (empty($data['prove']))
@@ -38,12 +31,17 @@ class SearchController extends Controller
 				else
 					$commentButton = '<button type="button" class="btn btn-flat btn-default" data-toggle="modal" data-target="#addCommentModal" style="color:white">新增評論</button>';
 					
+				// count query times
+				$queryTimes = 1;
+				if (!empty($data['query_times'])) 
+					$queryTimes = (int)$data['query_times'] + 1;
+				DB::collection("Info")->where("name", $query)->update(["query_times" => $queryTimes]);
 
 				return view("search", array(
 					"title" => $data['name']." - 中大美食",
 					"name" => $data['name'],
 					"telephone" => $data['telephone'],
-					"type" => $type[$data['type']],
+					"type" => $data['type'],
 					"address" => $data['address'],
 					"togo" => $data['togo'],
 					"note" => $note,

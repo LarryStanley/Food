@@ -38,7 +38,7 @@
 								if ($index < 10)
 									echo "<tr>";
 								else
-									echo "<tr style='display: none;'>";
+									echo "<tr style='display:none'>";
 								echo "<td>".$item['name']."</td>";
 								echo "<td>".$item['price']."</td>";
 								if (!empty($item['note']))
@@ -65,10 +65,7 @@
 									</thead>
 									<tbody>'; 
 								foreach ($category['items'] as $key => $item) {
-									if ($key < 10)
-										echo "<tr>";
-									else
-										echo "<tr style='display: none;'>";
+									echo "<tr>";
 									echo "<td>".$item['name']."</td>";
 									echo "<td>".$item['price']."</td>";
 									if (!empty($item['note']))

@@ -32,7 +32,7 @@ function showMoreTable (tableId) {
 }
 
 function search() {
-	if (!$("searchInput").val()){
+	if ($("#searchInput").val()){
 		$("#loading").remove();
 		$("#add_food").remove();
 		$("#search").append("<div id='loading'>資料查詢中...</div>");
@@ -63,6 +63,8 @@ function search() {
 				});
 			}
 		});
+	}else{
+		$("#search").append("<div id='loading'>請輸入要查詢的店家</div>");
 	}
 }
 
