@@ -53,7 +53,7 @@ class SearchController extends Controller
 					"title" => $data['name']." - 中大美食",
 					"message" => "<p>該筆資料還在審核中!</p>"));
 		}else
-			return redirect("/");
+			return view("errors/404");
 	}
 
 	public function api($query) {
