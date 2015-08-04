@@ -7,11 +7,10 @@
 			<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
 		</div>
 		<div id="search">
-			<div class="well" style="overflow: auto">
-				<h1>感謝您的新增</h1>
+			<div class="well" style="overflow: auto;">
+				<h1>500 內部錯誤！！</h1>
 				<hr>
-				<p><?php echo $message;?></p>
-				<p><a href="/add-food" class="btn btn-flat btn-info">新增更多餐廳</a></p>
+				<p>真難過，是我們的錯！我們會盡快修正</p>
 			</div>
 		</div>
 	</div>

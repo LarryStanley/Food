@@ -1,4 +1,3 @@
-
 var showTableRow = 11;
 var showTable = 0;
 var type = {
@@ -33,6 +32,7 @@ function showMoreTable (tableId) {
 
 function search() {
 	if ($("#searchInput").val()){
+		$(".fb-share-button").remove();
 		$("#loading").remove();
 		$("#add_food").remove();
 		$("#search").append("<div id='loading'>資料查詢中...</div>");
@@ -81,4 +81,28 @@ $(document).keypress(function(e) {
 		if (!$('#addCommentModal').hasClass('in'))
 			search();
 	}
+});
+
+$(document).ready(function(){
+	var allFoodData = [];
+	$.ajax({
+		url: '/api/auto-complete/',
+		dataType: 'json',
+		jsonpCallback: 'callback',
+		type: 'GET',
+		success: function (data) {
+			$.each(data, function(index, value) {
+				var result = {value: value, data: value};
+				allFoodData.push(result);
+			})
+		}
+	});
+
+	$("#searchInput").autocomplete({
+		lookup: allFoodData,
+		preserveInput:true,
+		onSelect: function(suggestion) {
+			window.location= "/"+suggestion.data;
+		}
+	});
 });

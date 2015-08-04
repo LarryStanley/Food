@@ -62,6 +62,12 @@ class SearchController extends Controller
 		return $data;
 	}
 
+	public function autoComplete() {
+		$data = DB::collection('Info')->lists("name");
+
+		return $data;
+	}
+
 	public function showBreakfast() {
 		$result = DB::collection('Info')->where("type", "早餐")->get();
 

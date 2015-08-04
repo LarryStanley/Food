@@ -47,9 +47,11 @@ class CommentController extends Controller
   				$result = array("user" => $userData, "comment" => $comment);
  				DB::collection("Info")->where("name", Input::get('food_name'))->push('comments', $result);
 
-		 		echo "success";
+ 				$result = array("message" => "success", "user" => $userData, "comment" => $comment);
+
+		 		return response()->json($result);
  			}else
- 				echo "error";
+ 				return response()->json(["message" => "error"]);
  		} else {
  			echo "please login with facebook.";
  		}

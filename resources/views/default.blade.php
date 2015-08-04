@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta property="og:title" content="<?php if (empty($title)) echo "中大美食"; else echo $title;?>" />
 	<meta property="og:site_name" content="<?php if (empty($title)) echo "中大美食"; else echo $title;?>"/>
-	<meta property="og:url" content="http://food.fbstats.info/<?php if(!empty($name)) echo $name; ?>"/>
+	<meta property="og:url" content="<?php echo Request::url(); ?>"/>
 	<meta property="og:description" content="
 		<?php
 			if (!empty($name)) echo $name;
@@ -35,12 +35,21 @@
 	<link rel="stylesheet" href="/css/main.css">
 
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="/js/jquery.autocomplete.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="/js/main.js"></script>
 
 </head>
 <body>
 	@yield("content")
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.4&appId=647423881978026";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

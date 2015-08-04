@@ -56,6 +56,18 @@
 						</select>					
 					</div>
 				</div>
+				<div class="form-group-material-orange-500">
+					<label for="name" class='col-sm-2 control-label'>地點</label>
+					<div class="col-sm-10">
+						<select class="form-control" name="location">
+						  <option>後門</option>
+						  <option>宵夜街</option>
+		  				  <option>七餐</option>
+						  <option>松苑</option>
+						  <option>九餐</option>
+						</select>					
+					</div>
+				</div>
 				<div class="form-group-material-orange-500" id="food-menu-group">
 					<label for="name" class='col-sm-2 control-label'>菜單</label>
 					<div class="col-sm-10">

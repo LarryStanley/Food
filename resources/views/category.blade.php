@@ -53,6 +53,6 @@
 			}
 		}
 	?>
-	<p id="add_food">找不到你知道的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>
+	<?php echo view("footer");?>
 </div>
 @stop

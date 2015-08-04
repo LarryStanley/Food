@@ -86,7 +86,7 @@
 			<hr>
 			<?php 
 				if (count($comments)) {
-					echo "<div id='commnet' class='container'>";
+					echo "<div id='comment' class='container'>";
 					foreach ($comments as $index => $comment) {
 						$result = '';
 						if ($index < 1)
@@ -104,11 +104,12 @@
 						echo "<button class='btn btn-flat btn-default' style='color: white' id='showMoreCommentButton' onclick='showMoreComment()'>更多評論</button>";
 					echo $newCommentButton;
 				}else
-					echo "<p>目前暫無評論".$newCommentButton."</p>";
+					echo "<div id='comment' class='container'></div><p id='noComment'>目前暫無評論".$newCommentButton."</p>";
 			?>
 		</div>
 	</div>
-	<p id="add_food">找不到你知道的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>
+	<div class="fb-share-button" data-href="<?php echo Request::url(); ?>" data-layout="button_count"></div>
+	<?php echo view("footer");?>
 </div>
 <div class="modal fade" id="addCommentModal" tabindex="-1" role="dialog" aria-labelledby="addCommentModalLabel">
 	<div class="modal-dialog">
@@ -133,16 +134,24 @@
 	</div>
 </div>
 <script>
+	<?php 
+		if (URL::previous() == 'https://www.facebook.com/') {
+			echo "$('#addCommentModal').modal('show');";
+		}
+	?>
+
 	$('#addCommentForm').submit(function(){
 	    $.ajax({
 	    	url: $('#addCommentForm').attr('action'),
 	    	type: "POST",
 	    	data : $('#addCommentForm').serialize(),
 	    	success: function(data){
-	    		console.log(data);
-	    		if (data === 'success') {
+	    		if (data['message'] === 'success') {
 	    			$("#addCommentModal").modal('hide');
-	    			location.reload();
+	    			var result = '<div class="row animated fadeIn"><div class="col-sm-1"><a href="'+ data['user']['link'] +'"><img class="img-circle" style="margin-top: 5px" src="http://graph.facebook.com/'+ data['user']['id'] +'/picture?type=square"/></a></div>';
+	    			result += '<div class="col-sm-8"><h4>'+ data['user']['name'] +'</h4>';
+	    			result += '<p>'+ data['comment'] +'</p></div></div>';
+	    			$("#comment").prepend(result);
 	    		}
 	      	}
 	    });

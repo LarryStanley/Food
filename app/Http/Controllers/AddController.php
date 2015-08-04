@@ -31,7 +31,8 @@ class AddController extends Controller
 
 			$menuFile = Input::file('menu_file');
 
-			if (Input::file('menu_file')) {
+			$fileSize = Input::file('menu_file')->getSize();
+			if ($fileSize < 20971520) {
 				$fileTyleArray = ["json", "jpg", "jpeg", "png", "JSON", "JPG", "JPEG", "PNG", "CSV", "csv"];
 				$fileOriginalName = Input::file('menu_file')->getClientOriginalName();
 				$fileType = explode(".",$fileOriginalName);
@@ -48,6 +49,7 @@ class AddController extends Controller
 						"note" => strip_tags(Input::get("note")),
 						"type" => strip_tags(Input::get("type")),
 						"togo" => strip_tags(Input::get('togo')),
+						"location" => strip_tags(Input::get('location')),
 						"record_user" => $userData,
 						"menu_file_url" =>  $filename.".".$fileType[count($fileType) - 1],
 						"prove" => 'false'
@@ -55,7 +57,7 @@ class AddController extends Controller
 					DB::collection('Info')->insert($data);
 
 					$message = "感謝您的新增，讓我們的資料更加豐富";
-					$message .= "請給我們一點時間審核，審核完後您可至「<a href='/".Input::get('name')."'>".Input::get('name')."</a>」查看";
+					$message .= "<br>請給我們一點時間審核，審核完後您可至「<a href='/".Input::get('name')."'>".Input::get('name')."</a>」查看";
 
 					return view("add-thanks", array("message" => $message));
 				}else

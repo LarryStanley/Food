@@ -30,5 +30,10 @@ Route::post('/add-comment', "CommentController@addComment");
 Route::get('/add-food', "AddController@index");
 Route::post('/add-food', "AddController@post");
 
+Route::get('/about', function() {
+	return view('about');
+});
+
+Route::get('/api/auto-complete', "SearchController@autoComplete");
 Route::get('/api/{query}', "SearchController@api");
 Route::get('/{query}', "SearchController@index");
