@@ -1,5 +1,12 @@
 <p id="add_food">
-	找不到你知道的餐廳？
-	<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a>
-	<a href="/about" class="btn btn-default" style="color:white; float: right">關於中大美食</a>
+	<div class="row">
+		<div class="col-md-6 col-sm-6">
+			找不到你知道的餐廳？
+			<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a>	
+		</div>
+		<div class="col-md-6 col-sm-6" id="feedbackButtons">
+			<a href="/feedback" class="btn btn-default" style="color: white">回報錯誤</a>
+			<a href="/about" class="btn btn-default" style="color: white">關於中大美食</a>
+		</div>
+	</div>
 </p>

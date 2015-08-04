@@ -145,6 +145,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         Artdarek\OAuth\OAuthServiceProvider::class,
+        Jenssegers\Mongodb\Session\SessionServiceProvider::class,
     ],
 
     /*

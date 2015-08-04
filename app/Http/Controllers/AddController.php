@@ -67,4 +67,19 @@ class AddController extends Controller
 			}
 		}
 	}
+
+	public function showFeedback() {
+		$data = DB::collection('Info')->lists("name");
+
+		return view("feedback", array("foods" => $data));
+	}
+
+	public function recordFeedback() {
+		$error = strip_tags(Input::get('error'));
+		$name = strip_tags(Input::get('name'));
+		if ($error)
+			DB::collection("feedback")->insert(array("feedback" => $error, "name" => $name));
+
+		return view("feedback-thanks");
+	}
 }

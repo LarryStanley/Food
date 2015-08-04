@@ -29,6 +29,8 @@ Route::post('/add-comment', "CommentController@addComment");
 
 Route::get('/add-food', "AddController@index");
 Route::post('/add-food', "AddController@post");
+Route::get('/feedback', "AddController@showFeedback");
+Route::post('/feedback', "AddController@recordFeedback");
 
 Route::get('/about', function() {
 	return view('about');

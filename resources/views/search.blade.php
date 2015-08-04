@@ -9,7 +9,7 @@
 		<input type="text" class="form-control" placeholder="立即查詢餐廳 例如：樂活堡" style="color: white" id="searchInput">
 		<button class="btn btn-default pull-right" style="color: white" onclick="search()">查詢</button>
 	</div>
-	<div class="well" id="detailResult">
+	<div class="well animated fadeIn" id="detailResult">
 		<div id="info">
 			<h2><?php echo $name;?></h2>
 			<hr>
@@ -104,10 +104,33 @@
 						echo "<button class='btn btn-flat btn-default' style='color: white' id='showMoreCommentButton' onclick='showMoreComment()'>更多評論</button>";
 					echo $newCommentButton;
 				}else
-					echo "<div id='comment' class='container'></div><p id='noComment'>目前暫無評論".$newCommentButton."</p>";
+					echo "<div id='comment' class='container'></div><p id='noComment' style='display: inline'>目前暫無評論</p>".$newCommentButton;
 			?>
 		</div>
 	</div>
+	<?php 
+		if ($recentView){
+			$result = '';
+			$result .= '<div class="well" id="recentView">
+				<h2>最近瀏覽</h2>
+				<hr>';
+				$resultArray = [$name];
+				$showCount = 0;
+				foreach ($recentView as $index => $value) {
+					if (!in_array($value['name'], $resultArray)) {
+						$result.= '<a href="'.$value['name'].'" class="btn btn-default" style="color:white">'.$value['name'].'</a>';
+						$showCount++;
+						array_push($resultArray, $value['name']);
+					}
+
+					if ($showCount > 4)
+						break;
+				}
+			$result .= '</div>';
+			if (strpos($result, "btn") !== false)
+				echo $result;
+		}
+	?>
 	<div class="fb-share-button" data-href="<?php echo Request::url(); ?>" data-layout="button_count"></div>
 	<?php echo view("footer");?>
 </div>
@@ -134,12 +157,6 @@
 	</div>
 </div>
 <script>
-	<?php 
-		if (URL::previous() == 'https://www.facebook.com/') {
-			echo "$('#addCommentModal').modal('show');";
-		}
-	?>
-
 	$('#addCommentForm').submit(function(){
 	    $.ajax({
 	    	url: $('#addCommentForm').attr('action'),
@@ -148,6 +165,7 @@
 	    	success: function(data){
 	    		if (data['message'] === 'success') {
 	    			$("#addCommentModal").modal('hide');
+	    			$('#noComment').remove();
 	    			var result = '<div class="row animated fadeIn"><div class="col-sm-1"><a href="'+ data['user']['link'] +'"><img class="img-circle" style="margin-top: 5px" src="http://graph.facebook.com/'+ data['user']['id'] +'/picture?type=square"/></a></div>';
 	    			result += '<div class="col-sm-8"><h4>'+ data['user']['name'] +'</h4>';
 	    			result += '<p>'+ data['comment'] +'</p></div></div>';

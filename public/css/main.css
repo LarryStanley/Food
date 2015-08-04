@@ -41,7 +41,11 @@ html, body {
 		margin-left: -585px;
 		margin-top: -97.5px;
 	}
-
+	
+	#feedbackButtons a{
+		color: white;
+		float: right;
+	}
 }
 
 @media (min-width: 992px) {
@@ -63,6 +67,11 @@ html, body {
 		left: 50%;
 		margin-left: -485px;
 		margin-top: -97.5px;
+	}
+
+	#feedbackButtons a{
+		color: white;
+		float: right;
 	}
 
 }
@@ -87,6 +96,11 @@ html, body {
 		margin-left: -375px;
 		margin-top: -97.5px;
 	}
+
+	#feedbackButtons a{
+		color: white;
+		float: right;
+	}
 }
 
 @media (max-width: 768px) {
@@ -108,6 +122,10 @@ html, body {
 		left: 50%;
 		margin-left: -40%;
 		margin-top: -97.5px;
+	}
+
+	#feedbackButtons a{
+		color: white;
 	}
 }
 
@@ -220,6 +238,19 @@ html, body {
 #title a:hover {
 	text-decoration: none;
 	color: white;
+}
+
+#recentView {
+	color: white;
+	background-color: #607D8B;
+}
+
+#recentView hr {
+	display: block; 
+	height: 0.1px;
+    border: 0; 
+    border-top: 1px solid white;
+    margin: 1em 0; padding: 0;
 }
 
 .autocomplete-suggestions { border: 0px solid #999; background: #FFF; overflow: auto; color:black; font-size:20px}

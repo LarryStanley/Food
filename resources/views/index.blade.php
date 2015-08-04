@@ -39,5 +39,6 @@
 		</div>
 	</div>
 	<?php if(!empty($message)) echo $message;?>
+	<?php echo view("footer"); ?>
 </div>
 @stop
