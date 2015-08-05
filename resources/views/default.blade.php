@@ -8,13 +8,15 @@
 	<meta property="og:title" content="<?php if (empty($title)) echo "中大美食"; else echo $title;?>" />
 	<meta property="og:site_name" content="<?php if (empty($title)) echo "中大美食"; else echo $title;?>"/>
 	<meta property="og:url" content="<?php echo Request::url(); ?>"/>
+	<meta name="description" content="立即查詢中大附近美食">
+	<meta name="keywords" content="中央大學 中大 美食 中央 食物 菜單 國立中央大學 宵夜街 後門 早餐 宵夜 晚餐 飲料 <?php if (!empty($name)) echo $name;?>">
 	<meta property="og:description" content="
 		<?php
-			if (!empty($name)) echo $name;
+			if (!empty($name)) echo $name." ";
 			else echo "立即查詢中大附近美食（不用找了，其實沒有）";
-			if (!empty($telephone)) echo $telephone;
-			if (!empty($type)) echo $type;
-			if (!empty($address)) echo $address;
+			if (!empty($telephone)) echo $telephone." ";
+			if (!empty($type)) echo $type." ";
+			if (!empty($address)) echo $address." ";
 		?>" />
 	<meta property="og:image" content="<?php if(empty($metaImage)) echo "http://www.ncufood.info/image/indexMetaImage.png"; else echo $metaImage;?>"/>
 	<meta property="og:type" content="article" />
