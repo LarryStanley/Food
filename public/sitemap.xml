@@ -8,102 +8,106 @@
 
 <url>
   <loc>http://www.ncufood.info/</loc>
-  <changefreq>always</changefreq>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/breakfast</loc>
-  <changefreq>always</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/dine</loc>
-  <changefreq>always</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/drink</loc>
-  <changefreq>always</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/midnight-snack</loc>
-  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/feedback</loc>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/about</loc>
-  <changefreq>always</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/捷捷廚房</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/樂活堡</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/NO.17%20White%20House</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/三立廚房</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/Daddy's</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/野味炭烤燒肉飯</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/川%20一品鍋</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/田園美食屋</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/六十甲</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/27。秀梅</loc>
-  <changefreq>always</changefreq>
-</url>
-<url>
-  <loc>http://www.ncufood.info/釜山苑韓國食堂</loc>
-  <changefreq>always</changefreq>
-</url>
-<url>
-  <loc>http://www.ncufood.info/客臨廣東粥</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/迷路</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/釜山苑韓國食堂</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/客臨廣東粥</loc>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/小惡魔</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/立橙</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/五餅二魚</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/霸王香雞排</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/好兇蛋餅</loc>
-  <changefreq>always</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/'+%20data['user']['link']%20+'</loc>
-  <changefreq>always</changefreq>
+  <priority>0.51</priority>
 </url>
 </urlset>
