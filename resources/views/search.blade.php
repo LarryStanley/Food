@@ -11,11 +11,11 @@
 	</div>
 	<div class="well animated fadeIn" id="detailResult">
 		<div id="info">
-			<h2><?php echo $name;?></h2>
+			<h2 itemprop="name"><?php echo $name;?></h2>
 			<hr>
 			<ul>
-				<li>電話：<?php echo $telephone;?></li>
-				<li>地址：<?php echo $address;?></li>
+				<li itemprop="telephone">電話：<?php echo $telephone;?></li>
+				<li itemprop="address">地址：<?php echo $address;?></li>
 				<li>類型：<?php echo $type;?></li>
 				<li>外送：<?php echo $togo;?></li>
 				<li>備註：<?php echo $note;?></li>
@@ -81,8 +81,8 @@
 						}
 					?>
 		</div>
-		<div id="comments">
-			<h3>評論</h3>
+		<div id="comments" itemprop="review">
+			<h3 itemprop="reviewBody">評論</h3>
 			<hr>
 			<?php 
 				if (count($comments)) {
