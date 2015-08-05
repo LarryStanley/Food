@@ -42,8 +42,10 @@ class SearchController extends Controller
 				$recentView = '';
 				if (Session::get('id')) {
 					$recentView = DB::collection("viewLog")->where("id", Session::get('id'))->first();
-					$recentView = $recentView['log'];
-					$recentView = array_reverse($recentView);
+					if ($recentView){
+						$recentView = $recentView['log'];
+						$recentView = array_reverse($recentView);
+					}
 				}
 
 				// view log
