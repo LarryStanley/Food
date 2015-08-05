@@ -5,6 +5,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Input;
 use Session;
+use Image;
 
 class SearchController extends Controller
 {
@@ -66,6 +67,13 @@ class SearchController extends Controller
 					));
 				}
 
+				// add image
+				$metaImage = '';
+				if (!empty($data['og_image_url'])) {
+					$metaImage = $data['og_image_url'][0];
+				} else {
+					$metaImage = $this->createImage($data['name']);
+				}
 
 				return view("search", array(
 					"title" => $data['name']." - 中大美食",
@@ -78,6 +86,7 @@ class SearchController extends Controller
 					"comments" => $comments,
 					"newCommentButton" => $commentButton,
 					"recentView" => $recentView,
+					"metaImage" => $metaImage,
 					"menu" => $menu));			
 			}else
 				return view("index", array(
@@ -135,5 +144,70 @@ class SearchController extends Controller
 		));
 	}
 
+	public function createImage($name) {
+		$data = DB::collection('Info')->where('name', $name)->first();
+		$image = Image::canvas(1200, 630, '#0277BD');
+ 		$image->text($data['name'], 60, 130, function($font) {
+ 			$font->file(public_path('fonts/NotoSansCJKtc-Light.otf'));
+			$font->size(72);
+			$font->color("#FFF");
+     	});
+
+     	$image->line(70, 190, 1130, 190, function ($draw) {
+		    $draw->color('#FFF');
+		});
+
+ 		$image->text("● 電話：".$data['telephone'], 80, 290, function($font) {
+ 			$font->file(public_path('fonts/NotoSansCJKtc-Light.otf'));
+			$font->size(48);
+			$font->color("#FFF");
+     	});
+
+ 		$image->text("● 地址：".$data['address'], 80, 350, function($font) {
+ 			$font->file(public_path('fonts/NotoSansCJKtc-Light.otf'));
+			$font->size(48);
+			$font->color("#FFF");
+     	});
+
+ 		$image->text("● 類型：".$data['type'], 80, 410, function($font) {
+ 			$font->file(public_path('fonts/NotoSansCJKtc-Light.otf'));
+			$font->size(48);
+			$font->color("#FFF");
+     	});
+
+ 		$image->text("● 外送：".$data['togo'], 80, 470, function($font) {
+ 			$font->file(public_path('fonts/NotoSansCJKtc-Light.otf'));
+			$font->size(48);		
+			$font->color("#FFF");
+     	});
+
+ 		$image->text("● 備註：".$data['note'], 80, 530, function($font) {
+ 			$font->file(public_path('fonts/NotoSansCJKtc-Light.otf'));
+			$font->size(48);
+			$font->color("#FFF");
+     	});
+
+
+		$image->encode('jpg');
+		$filename = $data['name'];
+		$client_id="0cabe1987d4fb3f";
+		$timeout = 30;
+		$pvars = array('image' => base64_encode($image));
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, 'https://api.imgur.com/3/image.json');
+		curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Client-ID ' . $client_id));
+		curl_setopt($curl, CURLOPT_POST, 1);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $pvars);
+		$out = curl_exec($curl);
+		curl_close ($curl);
+		$pms = json_decode($out,true);
+
+		if(!empty($pms['data']['link'])){
+			DB::collection('Info')->where('name', $name)->push('og_image_url', $pms['data']['link']);
+			return $pms['data']['link'];
+		}
+	}
 
 }

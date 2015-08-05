@@ -146,6 +146,8 @@ return [
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         Artdarek\OAuth\OAuthServiceProvider::class,
         Jenssegers\Mongodb\Session\SessionServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -194,7 +196,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'OAuth'     => Artdarek\OAuth\Facade\OAuth::class,
-
+        'Image'     => Intervention\Image\Facades\Image::class,
     ],
 
 ];
