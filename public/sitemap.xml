@@ -106,8 +106,4 @@
   <loc>http://www.ncufood.info/好兇蛋餅</loc>
   <priority>0.64</priority>
 </url>
-<url>
-  <loc>http://www.ncufood.info/'+%20data['user']['link']%20+'</loc>
-  <priority>0.51</priority>
-</url>
 </urlset>
