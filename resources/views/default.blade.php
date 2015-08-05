@@ -16,7 +16,7 @@
 			if (!empty($type)) echo $type;
 			if (!empty($address)) echo $address;
 		?>" />
-	<meta property="og:image" content="http://food.fbstats.info/image/indexMetaImage.png"/>
+	<meta property="og:image" content="http://www.ncufood.info/image/indexMetaImage.png"/>
 	<meta property="og:type" content="article" />
 
 	<title>
@@ -42,6 +42,18 @@
 </head>
 <body>
 	@yield("content")
+	<?php
+	if ($_SERVER['SERVER_NAME'] == "www.ncufood.info"){
+		echo "<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-65836197-1', 'auto');
+		ga('send', 'pageview');
+		</script>";
+	}
+	?>
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -50,14 +62,5 @@
 	  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.4&appId=647423881978026";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-65836197-1', 'auto');
-		ga('send', 'pageview');
-	</script>
 </body>
 </html>
