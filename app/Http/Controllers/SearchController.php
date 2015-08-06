@@ -22,6 +22,9 @@ class SearchController extends Controller
 				if (!empty($data['note']))
 					$note = $data['note'];
 
+				$coordinate = '';
+				if (!empty($data['coordinate']))
+					$coordinate = $data['coordinate'];
 				$comments = array();
 				if (!empty($data['comments']))
 					$comments = array_reverse($data['comments']);
@@ -89,11 +92,12 @@ class SearchController extends Controller
 					"newCommentButton" => $commentButton,
 					"recentView" => $recentView,
 					"metaImage" => $metaImage,
+					"coordinate" => $coordinate,
 					"menu" => $menu));			
 			}else
 				return view("index", array(
 					"title" => $data['name']." - 中大美食",
-					"message" => "<p>該筆資料還在審核中!</p>"));
+					"message" => "<h2>該筆資料還在審核中!</h2>"));
 		}else
 			return view("errors/404");
 	}

@@ -15,7 +15,15 @@
 			<hr>
 			<ul>
 				<li itemprop="telephone">電話：<?php echo $telephone;?></li>
-				<li itemprop="address">地址：<?php echo $address;?></li>
+				<li itemprop="address">
+					地址：
+					<?php 
+						if (!empty($coordinate)){
+							echo ' <a href="http://www.google.com/maps/place/'.$coordinate.'/@'.$coordinate.',@20z" target="_blank">'.$address.' <i class="fa fa-external-link-square"></i></a>';
+						}else
+							echo $address;
+					?>
+				</li>
 				<li>類型：<?php echo $type;?></li>
 				<li>外送：<?php echo $togo;?></li>
 				<li>備註：<?php echo $note;?></li>

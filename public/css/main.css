@@ -153,6 +153,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1705c', end
     margin: 1em 0; padding: 0; 
 }
 
+#info a:link {
+	color: white;
+}
+
+#info a:visited {
+	color: white;
+}
+
+#info a:active {
+	color: white;
+}
+
+#info a:hover {
+	color: white;
+}
 .well #comments hr { 
 	display: block; 
 	height: 0.1px;
