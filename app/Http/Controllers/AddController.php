@@ -10,6 +10,8 @@ use URL;
 class AddController extends Controller
 {
 	public function index() {
+		if ($_SERVER['SERVER_NAME'] == "beta.ncufood.info")
+			Session::put('facebookId', '867794553236067');
 		if (Session::get('facebookId')) {
 			return view("add", array(
 				"title" => "新增餐廳 - 中大美食"

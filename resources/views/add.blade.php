@@ -72,12 +72,35 @@
 					<label for="name" class='col-sm-2 control-label'>菜單</label>
 					<div class="col-sm-10">
 						<input type="file" class='form-control' name="menu_file" id="food-menu-value">
-						<p>您可上傳png, jpg, json, csv形式的菜單<br>呈現方式可參考<a href="/menu-format" target="_blank">菜單格式</a></p>
+						<p>
+							您可上傳png, jpg, json, csv形式的菜單<br>
+							呈現方式可參考<a href="/menu-format" target="_blank">菜單格式</a><br>
+							<!-- 或者您也可以線上<a href="#" data-toggle="modal" data-target="#editMenuModal">編輯菜單</a>(Beta) !-->
+						</p>
 					</div>
 				</div>
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<input type="submit" value='送出' class='btn btn-flat btn-warning pull-right'>
 			</form>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="editMenuModal" tabindex="-1" role="dialog" aria-labelledby="editMenuLabel">
+	<div class="modal-dialog">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<h4 class="modal-title" id="editMenuLabel">編輯菜單</h4>
+      		</div>
+			<form  id="addCommentForm" action="/add-comment" class="form-group-material-orange-500" method="POST">
+	      		<div class="modal-body">
+					
+	      		</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-flat btn-default" data-dismiss="modal">取消</button>
+		        	<button type="submit" class="btn btn-flat btn-warning">送出</button>
+		      	</div>
+	      	</from>
 		</div>
 	</div>
 </div>

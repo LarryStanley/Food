@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hant-TW" ng-app>
 <head>
 	<meta charset="UTF-8">
 	<meta name="_token" content="{!! csrf_token() !!}"/>
@@ -39,6 +39,7 @@
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="/js/jquery.autocomplete.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	<script src="/js/main.min.js"></script>
 
 </head>
