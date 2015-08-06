@@ -16,10 +16,9 @@
 			<ul>
 				<li itemprop="telephone">電話：<?php echo $telephone;?></li>
 				<li itemprop="address">
-					地址：
-					<?php 
+					地址：<?php 
 						if (!empty($coordinate)){
-							echo ' <a href="http://www.google.com/maps/place/'.$coordinate.'/@'.$coordinate.',@18z" target="_blank">'.$address.' <i class="fa fa-external-link-square"></i></a>';
+							echo '<a href="http://www.google.com/maps/place/'.$coordinate.'/@'.$coordinate.',@18z" target="_blank">'.$address.' <i class="fa fa-external-link-square"></i></a>';
 						}else
 							echo $address;
 					?>
