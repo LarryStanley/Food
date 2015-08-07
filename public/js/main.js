@@ -76,12 +76,12 @@ function showMoreComment() {
 	$('#showMoreCommentButton').hide();
 }
 
-$(document).keypress(function(e) {
+/*$(document).keypress(function(e) {
 	if(e.which == 13){
 		if (!$('#addCommentModal').hasClass('in'))
 			search();
 	}
-});
+});*/
 
 $(document).ready(function(){
 	var allFoodData = [];
