@@ -59,11 +59,11 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.ncufood.info/川%20一品鍋</loc>
+  <loc>http://www.ncufood.info/六十甲</loc>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.ncufood.info/六十甲</loc>
+  <loc>http://www.ncufood.info/川%20一品鍋</loc>
   <priority>0.64</priority>
 </url>
 <url>
@@ -87,6 +87,22 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.ncufood.info/饌食園</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/Sidewalk%20人行道</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/SO私房料理</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/來客餐坊</loc>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.ncufood.info/小惡魔</loc>
   <priority>0.64</priority>
 </url>
@@ -100,6 +116,14 @@
 </url>
 <url>
   <loc>http://www.ncufood.info/Backdoor%20Café</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/清心福全%20-%20中壢中央店</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/小木屋鬆餅</loc>
   <priority>0.64</priority>
 </url>
 <url>
