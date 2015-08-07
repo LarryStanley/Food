@@ -98,7 +98,7 @@
 					<div class="category well" ng-repeat="category in menu.menuData" style="overflow: auto;">
 						<input style="color: #00838F" type="text" ng-model="category.category_name" class="form-control" style="height: 40px" placeholder="種類">
 						<div class="form-group-material-grey-500">
-							<input style="color: black" type="text" ng-model="category.category_note" class="form-control" style="height: 30px" placeholder="備註">							
+							<input style="color: black" type="text" ng-model="category.category_note" class="form-control" style="height: 30px" placeholder="備註(可留空)">							
 						</div>
 						<p><?php echo "{{men.category_note}}";?></p>
 						<table class="table table-striped table-hover">
@@ -125,7 +125,7 @@
 								<input type="text" ng-model="menu.price[$index]" class="form-control" placeholder="價錢">							
 							</div>
 							<div class="col-md-3 col-sm-3">
-								<input type="text" ng-model="menu.note[$index]" class="form-control" placeholder="備註">							
+								<input type="text" ng-model="menu.note[$index]" class="form-control" placeholder="備註(可留空)">							
 							</div>
 							<div class="col-md-3 col-sm-3">
 								<input type="submit" value="新增品項" class="btn btn-flat btn-material-orange-500">							

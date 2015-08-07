@@ -11,31 +11,37 @@
 |
 */
 
-Route::get('/', function () {
-	return view("index");
+Route::group(['domain' => '{server}.ncufood.info'], function () {
+	$myURL = ["beta.ncufood.info", "www.ncufood.info"];
+
+	if (in_array($_SERVER['SERVER_NAME'], $myURL)) {
+	   	Route::get('/', function () {
+			return view("index");
+		});
+
+		Route::get('/menu-format', function() {
+			return view("menu-format");
+		});
+
+		Route::get('/breakfast', "SearchController@showBreakfast");
+		Route::get('/dine', "SearchController@showDine");
+		Route::get('/drink', "SearchController@showDrink");
+		Route::get('/midnight-snack', "SearchController@showMidnightSnack");
+
+		Route::get('/auth/facebook', "CommentController@facebookLogin");
+		Route::post('/add-comment', "CommentController@addComment");
+
+		Route::get('/add-food', "AddController@index");
+		Route::post('/add-food', "AddController@post");
+		Route::get('/feedback', "AddController@showFeedback");
+		Route::post('/feedback', "AddController@recordFeedback");
+
+		Route::get('/about', function() {
+			return view('about');
+		});
+
+		Route::get('/api/auto-complete', "SearchController@autoComplete");
+		Route::get('/api/{query}', "SearchController@api");
+		Route::get('/{query}', "SearchController@index"); 
+	}
 });
-
-Route::get('/menu-format', function() {
-	return view("menu-format");
-});
-
-Route::get('/breakfast', "SearchController@showBreakfast");
-Route::get('/dine', "SearchController@showDine");
-Route::get('/drink', "SearchController@showDrink");
-Route::get('/midnight-snack', "SearchController@showMidnightSnack");
-
-Route::get('/auth/facebook', "CommentController@facebookLogin");
-Route::post('/add-comment', "CommentController@addComment");
-
-Route::get('/add-food', "AddController@index");
-Route::post('/add-food', "AddController@post");
-Route::get('/feedback', "AddController@showFeedback");
-Route::post('/feedback', "AddController@recordFeedback");
-
-Route::get('/about', function() {
-	return view('about');
-});
-
-Route::get('/api/auto-complete', "SearchController@autoComplete");
-Route::get('/api/{query}', "SearchController@api");
-Route::get('/{query}', "SearchController@index");
