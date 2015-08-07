@@ -1,7 +1,13 @@
 angular.module('addMenu', [])
 	.controller('MenuController', function() {
 		var menu = this;
-		menu.menuData = [];
+		menu.menuData = [
+			{
+				category_name: "",
+				note: "",
+				items: []
+			}
+		];
 
 		menu.note = [];
 		menu.price = [];
@@ -20,7 +26,7 @@ angular.module('addMenu', [])
 					menu.note[index] = '';
 				if (menu.price[index] === undefined)
 					menu.price[index] = '';
-				
+
 				menu.menuData[index].items.push({name: menu.name[index], price:menu.price[index], note:menu.note[index]});
 				menu.name[index] = '';
 				menu.price[index] = '';

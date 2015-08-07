@@ -10,3 +10,5 @@ config/database.php
 config/database.php
 
 config/oauth-5-laravel.php
+
+public/favicon.ico

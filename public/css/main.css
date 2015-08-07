@@ -287,6 +287,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1705c', end
 	margin: 0px 0px 0px 0px;
 }
 
+#editMenuModalContent hr {
+	display: block; 
+	height: 0.1px;
+    border: 0; 
+    border-top: 1px solid white;
+    margin: 1em 0; padding: 0; 
+}
+
 #addCategoryForm input, select, textarea {
 	color: white;
 }

@@ -26,7 +26,7 @@
 			</div>
 			<div class="col-md-3 col-sm-3 col-xs-6 text-center">
 				<a href="/drink" class="btn btn-default" style="color:white">
-					飲料<br>
+					飲料/點心<br>
 					<i class="fa fa-glass fa-4x"></i>
 				</a>
 			</div>

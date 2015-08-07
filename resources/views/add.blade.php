@@ -6,7 +6,7 @@
 		<div id="title">
 			<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
 		</div>
-		<div class="well" style="overflow: auto">
+		<div class="well" style="overflow: auto" id="addFood">
 			<h1>新增餐廳</h1>
 			<hr>
 			<form action="/add-food" class="form-horizontal" method="POST" enctype="multipart/form-data" id="addFoodForm">
@@ -75,8 +75,8 @@
 						<input type="hidden" 
 						<p>
 							您可上傳png, jpg, json, csv形式的菜單，呈現方式可參考<a href="/menu-format" target="_blank">菜單格式</a><br>
-							<!--或者您也可以線上<a href="#" data-toggle="modal" data-target="#editMenuModal">編輯菜單</a>(Beta)<br>
-							上傳或編輯擇一 !-->
+							或者您也可以線上<a href="#" data-toggle="modal" data-target="#editMenuModal">編輯菜單</a>(Beta)<br>
+							上傳或編輯擇一
 						</p>
 					</div>
 				</div>
@@ -96,7 +96,10 @@
 	      		<div class="modal-body">
 					<hr>
 					<div class="category well" ng-repeat="category in menu.menuData" style="overflow: auto;">
-						<h5 style="color: #0277BD"><?php echo "{{category.category_name}}" ;?></h5>
+						<input style="color: #00838F" type="text" ng-model="category.category_name" class="form-control" style="height: 40px" placeholder="種類">
+						<div class="form-group-material-grey-500">
+							<input style="color: black" type="text" ng-model="category.category_note" class="form-control" style="height: 30px" placeholder="備註">							
+						</div>
 						<p><?php echo "{{men.category_note}}";?></p>
 						<table class="table table-striped table-hover">
 							<thead>
@@ -176,14 +179,15 @@
 		});
 
 		var menuValue = $("#food-menu-value").val();
-		if (!menuValue && JSON.parse($("#menuData").val()).length === 0){
+		var menuData = JSON.parse($("#menuData").val());
+		if (!menuValue && menuData[0].category_name.length === 0){
 			$("#food-menu-group").attr("class","form-group has-error");
 			hasError = true;
 		}else
 			$("#food-menu-group").attr("class","form-group-material-orange-500");
 
 		if (hasError){
-			$(".well").append("<div id='errorMessage'>欄位不可留空!!<br>編輯或上傳菜單擇一</div>");
+			$("#addFood").append("<div id='errorMessage'>欄位不可留空!!<br>編輯或上傳菜單擇一</div>");
 			event.preventDefault();
 			return false;
 		}
