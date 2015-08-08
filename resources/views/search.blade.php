@@ -108,7 +108,7 @@
 					}
 					echo "</div>";
 					if (count($comments) > 1)
-						echo "<button class='btn btn-flat btn-default' style='color: white' id='showMoreCommentButton' onclick='showMoreComment()'>更多評論</button>";
+						echo "<button class='btn btn-default' style='color: white' id='showMoreCommentButton' onclick='showMoreComment()'>更多評論</button>";
 					echo $newCommentButton;
 				}else
 					echo "<div id='comment' class='container'></div><p id='noComment' style='display: inline'>目前暫無評論</p>".$newCommentButton;
