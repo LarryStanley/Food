@@ -125,6 +125,7 @@
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">						
 							變更需要儲存後才會更改
 							<input type="submit" class="btn btn-flat btn-material-orange-500" value="儲存">
+							<a target='_blank' href="/<?php echo "{{admin.currentData.name}}";?>" class="btn btn-flat btn-info">查看結果</a>
 						</form>						
 					</div>
 				</div>
