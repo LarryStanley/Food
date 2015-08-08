@@ -287,6 +287,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1705c', end
 	margin: 0px 0px 0px 0px;
 }
 
+#editMenuModalContentAdmin {
+	background-color: #00838F;
+	color: white;
+	padding: 20px 20px 20px 20px;
+	position: relative;
+	right: 0;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+}
+
 #editMenuModalContent hr {
 	display: block; 
 	height: 0.1px;
@@ -295,8 +305,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1705c', end
     margin: 1em 0; padding: 0; 
 }
 
-#addCategoryForm input, select, textarea {
+#addCategoryForm #info input, select, textarea {
 	color: white;
+}
+
+#adminDashboard {
+	padding: 0px 0px 0px 0px;
+}
+
+#adminDashboard #info input[type="text"]{
+	color: white;
+}
+
+#editMenuModalContentAdmin .form-control::-moz-placeholder {
+	color: #9E9E9E;
+}
+#editMenuModalContentAdmin .form-control:-ms-input-placeholder {
+	color: #9E9E9E;
+}
+#editMenuModalContentAdmin .form-control::-webkit-input-placeholder {
+	color: #9E9E9E;
+}
+
+#adminSave {
+	color: #607D8B;
+	padding: 10px 20px 20px 20px;
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
 }
 
 .autocomplete-suggestions { border: 0px solid #999; background: #FFF; overflow: auto; color:black; font-size:20px}

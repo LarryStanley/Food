@@ -102,6 +102,12 @@ class SearchController extends Controller
 			return view("errors/404");
 	}
 
+	public function showAllData() {
+		$data = DB::collection("Info")->get();
+
+		return $data;
+	}
+
 	public function api($domain, $query) {
 		$data = DB::collection('Info')->where("name", "LIKE", "%".$query."%")->get();
 
