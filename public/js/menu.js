@@ -31,6 +31,7 @@ angular.module('addMenu', [])
 				menu.name[index] = '';
 				menu.price[index] = '';
 				menu.note[index] = '';
+				angular.element("#itemNameInput-"+index).trigger('focus');
 			}
 		};
 	});

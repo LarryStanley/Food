@@ -119,7 +119,7 @@
 						</table>
 						<form ng-submit="menu.addItem($index)" id="addFoodForm" class="form-group-material-orange-500">
 							<div class="col-md-3 col-sm-3">
-								<input type="text" ng-model="menu.name[$index]" class="form-control" placeholder="品項">							
+								<input type="text" ng-model="menu.name[$index]" class="form-control" placeholder="品項" id="itemNameInput-<?php echo '{{$index}}';?>">							
 							</div>
 							<div class="col-md-3 col-sm-3">
 								<input type="text" ng-model="menu.price[$index]" class="form-control" placeholder="價錢">							
@@ -156,6 +156,10 @@
 	</div>
 </div>
 <script>
+	window.onbeforeunload = function() {
+    	return '您還有資料尚未儲存喔！！';
+	}
+
 	function editMenuEnd() {
 		$("#editMenuModal").modal("hide");
 		$("#errorMessage").remove();

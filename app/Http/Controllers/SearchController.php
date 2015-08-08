@@ -9,7 +9,7 @@ use Image;
 
 class SearchController extends Controller
 {
-	public function index($query) {
+	public function index($domain, $query) {
 		$data = DB::collection('Info')->where("name", $query)->first();
 		if ($data) {
 			if (empty($data['prove']))
@@ -102,7 +102,7 @@ class SearchController extends Controller
 			return view("errors/404");
 	}
 
-	public function api($query) {
+	public function api($domain, $query) {
 		$data = DB::collection('Info')->where("name", "LIKE", "%".$query."%")->get();
 
 		return $data;
