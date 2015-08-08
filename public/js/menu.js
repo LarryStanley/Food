@@ -29,7 +29,6 @@ angular.module('addMenu', [])
 
 				menu.menuData[index].items.push({name: menu.name[index], price:menu.price[index], note:menu.note[index]});
 				menu.name[index] = '';
-				menu.price[index] = '';
 				menu.note[index] = '';
 				angular.element("#itemNameInput-"+index).trigger('focus');
 			}
