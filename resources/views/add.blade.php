@@ -98,9 +98,8 @@
 					<div class="category well" ng-repeat="category in menu.menuData" style="overflow: auto;">
 						<input style="color: #00838F" type="text" ng-model="category.category_name" class="form-control" style="height: 40px" placeholder="種類">
 						<div class="form-group-material-grey-500">
-							<input style="color: black" type="text" ng-model="category.category_note" class="form-control" style="height: 30px" placeholder="備註(可留空)">							
+							<input style="color: black" type="text" ng-model="category.note" class="form-control" style="height: 30px" placeholder="備註(可留空)">							
 						</div>
-						<p><?php echo "{{men.category_note}}";?></p>
 						<table class="table table-striped table-hover">
 							<thead>
 								<tr>
@@ -168,6 +167,8 @@
 
 	$("#addFoodForm").submit(function() {
 
+		window.onbeforeunload = null;
+
 		$("#errorMessage").remove();
 
 		var checkId = ['name', 'telephone', 'address'];
@@ -193,7 +194,11 @@
 		if (hasError){
 			$("#addFood").append("<div id='errorMessage'>欄位不可留空!!<br>編輯或上傳菜單擇一</div>");
 			event.preventDefault();
+			window.onbeforeunload = function() {
+		    	return '您還有資料尚未儲存喔！！';
+			}
 			return false;
+
 		}
 	});
 </script>
