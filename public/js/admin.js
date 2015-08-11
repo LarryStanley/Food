@@ -20,7 +20,6 @@ angular.module('admin', [])
 					});
 				});
 			} else {
-				console.log("yes");
 				$.each(admin.currentData.menu, function(index, item){
 					foodData += item.name + " ";
 				});
