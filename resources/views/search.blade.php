@@ -6,7 +6,7 @@
 		<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
 	</div>
 	<div class="form-group-material-grey-400">
-		<input type="text" class="form-control" placeholder="立即查詢餐廳 例如：樂活堡" style="color: white" id="searchInput">
+		<input type="text" class="form-control" placeholder="立即查詢餐廳或想吃的食物 例如：樂活堡、義大利麵、綠茶" style="color: white" id="searchInput">
 		<button class="btn btn-default pull-right" style="color: white" onclick="search()">查詢</button>
 	</div>
 	<div class="well animated fadeIn" id="detailResult">
@@ -88,7 +88,7 @@
 						}
 					?>
 		</div>
-		<div id="comments" itemprop="review">
+		<div id="comments" itemprop="review" style="display:none">
 			<h3 itemprop="reviewBody">評論</h3>
 			<div id="likeArea">
 				<a href="#" onclick="return false;" ng-click="food.likeClick()">
@@ -178,7 +178,6 @@
 	</div>
 </div>
 <script>
-
 	$('#addCommentForm').submit(function(){
 	    $.ajax({
 	    	url: $('#addCommentForm').attr('action'),
