@@ -32,7 +32,7 @@ function showMoreTable (tableId) {
 
 function search() {
 	if ($("#searchInput").val()){
-		$(".fb-share-button").remove();
+		/*$(".fb-share-button").remove();
 		$("#loading").remove();
 		$("#add_food").remove();
 		$("#search").append("<div id='loading'>資料查詢中...</div>");
@@ -62,7 +62,9 @@ function search() {
 					$("#search").append('<p id="add_food">找不到你知道的餐廳？<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a></p>');
 				});
 			}
-		});
+		});*/
+		
+		window.location= "/query/"+$("#searchInput").val();
 	}else{
 		$("#search").append("<div id='loading'>請輸入要查詢的店家</div>");
 	}
@@ -76,12 +78,12 @@ function showMoreComment() {
 	$('#showMoreCommentButton').hide();
 }
 
-/*$(document).keypress(function(e) {
+$(document).keypress(function(e) {
 	if(e.which == 13){
-		if (!$('#addCommentModal').hasClass('in'))
+		if ($("#searchInput").is(":focus"))
 			search();
 	}
-});*/
+});
 
 $(document).ready(function(){
 	var allFoodData = [];
@@ -102,7 +104,7 @@ $(document).ready(function(){
 		lookup: allFoodData,
 		preserveInput:true,
 		onSelect: function(suggestion) {
-			window.location= "/"+suggestion.data;
+			window.location= "/query/"+suggestion.data;
 		}
 	});
 });

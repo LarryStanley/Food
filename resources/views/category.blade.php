@@ -39,19 +39,22 @@
 		</div>
 	</div>
 	<?php 
-		foreach ($results as $index => $value) {
-			if (empty($value['prove']))
-				$value['prove'] = 'true';
-			if ($value['prove'] == 'true') {
-				$result = '';
-				if ($index > 0)
-					$result .= '<div class="well result" id="result" style="margin-top: 20px">';
-				else
-					$result .= '<div class="well result" id="result">';
-				$result .= '<a href="/'.$value['name'].'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a>';
-				echo $result.'<h2 stlye="display: inline">'.$value['name'].'</h2></div>';
+		if ($results) {
+			foreach ($results as $index => $value) {
+				if (empty($value['prove']))
+					$value['prove'] = 'true';
+				if ($value['prove'] == 'true') {
+					$result = '';
+					if ($index > 0)
+						$result .= '<div class="well result" id="result" style="margin-top: 20px">';
+					else
+						$result .= '<div class="well result" id="result">';
+					$result .= '<a href="/'.$value['name'].'" class="seeMore btn btn-flat btn-material-orange-A400">查看更多</a>';
+					echo $result.'<h2 stlye="display: inline">'.$value['name'].'</h2></div>';
+				}
 			}
-		}
+		}else
+			echo "<h3>真難過，查無有關「".$query."」資料</h3>";
 	?>
 	<?php echo view("footer");?>
 </div>

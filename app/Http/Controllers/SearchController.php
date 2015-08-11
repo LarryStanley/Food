@@ -106,9 +106,23 @@ class SearchController extends Controller
 	public function queryPage($domain, $query) {
 		$result = DB::collection('Info')->where("name", "LIKE", "%".$query."%")->orderBy('query_times', 'desc')->get();
 
+		// get data from food
+		$data = DB::collection('Info')->get();
+		foreach ($data as $key => $value) {
+			if (!empty($value["hashTags"])) {
+				foreach ($value["hashTags"] as $index => $hashTag) {
+					if (in_array($query, $hashTag)) {
+						array_push($result, $value);		
+						break;				
+					}
+				}
+			}
+		}
+
 		return view("category", array(
 			"title" => $query." - 中大美食",
-			"results" => $result
+			"results" => $result,
+			"query" => $query
 		));
 	}
 
