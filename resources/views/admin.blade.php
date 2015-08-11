@@ -94,7 +94,7 @@
 					</div>
 					<div id="editMenuModalContentAdmin">
 						<button style="color: white" onclick="showMenu()" class="btn btn-default">編輯菜單</button>
-						<div class="category panel" ng-repeat="category in admin.currentData.menu" style="overflow: auto; display: none">
+						<div class="category panel" ng-if="admin.currentData.menu[0].category_name" ng-repeat="category in admin.currentData.menu" style="overflow: auto; display: none">
 							<div class="panel-body">
 								<input style="color: #00838F" type="text" ng-model="category.category_name" class="form-control" style="height: 40px" placeholder="種類">
 								<div class="form-group-material-grey-500">
@@ -110,6 +110,26 @@
 									</thead>
 									<tbody>
 										<tr ng-repeat="item in category.items" class="form-group-material-orange-500">
+											<td><input type="text" ng-model="item.name" class="form-control" style="height: 30px"></td>
+											<td><input type="text" ng-model="item.price" class="form-control" style="height: 30px"></td>
+											<td><input type="text" ng-model="item.note" class="form-control" style="height: 30px" placeholder="備註(可留空)"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="category panel" ng-if="!admin.currentData.menu[0].category_name" style="overflow: auto; display: none">
+							<div class="panel-body">
+								<table class="table table-striped table-hover">
+									<thead>
+										<tr>
+											<td style="color: black">品項</td>
+											<td style="color: black">價錢</td>
+											<td style="color: black">備註</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="item in admin.currentData.menu" class="form-group-material-orange-500">
 											<td><input type="text" ng-model="item.name" class="form-control" style="height: 30px"></td>
 											<td><input type="text" ng-model="item.price" class="form-control" style="height: 30px"></td>
 											<td><input type="text" ng-model="item.note" class="form-control" style="height: 30px" placeholder="備註(可留空)"></td>
