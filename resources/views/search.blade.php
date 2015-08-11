@@ -1,7 +1,7 @@
 @extends("default")
 
 @section("content")
-<div class="top" id="search">
+<div class="top" id="search" ng-controller="FoodController as food">
 	<div id="title">
 		<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
 	</div>
@@ -90,6 +90,20 @@
 		</div>
 		<div id="comments" itemprop="review">
 			<h3 itemprop="reviewBody">評論</h3>
+			<div id="likeArea">
+				<a href="#" onclick="return false;" ng-click="food.likeClick()">
+					<sapn id="like">
+						<i class="fa fa-lg fa-thumbs-up"></i> 
+						<span class="counter"><?php echo "{{food.likeCounter}}";?></span> 					
+					</sapn> 
+				</a>
+				<a href="#" onclick="return false;" ng-click="food.dislikeClick()">
+					<span id="dislike">
+						<i class="fa fa-lg fa-thumbs-down"></i>		
+						<span  class="counter"><?php echo "{{food.dislikeCounter}}";?></span>			
+					</span>
+				</a>
+			</div>
 			<hr>
 			<?php 
 				if (count($comments)) {
@@ -164,6 +178,7 @@
 	</div>
 </div>
 <script>
+
 	$('#addCommentForm').submit(function(){
 	    $.ajax({
 	    	url: $('#addCommentForm').attr('action'),

@@ -93,6 +93,7 @@ class SearchController extends Controller
 					"recentView" => $recentView,
 					"metaImage" => $metaImage,
 					"coordinate" => $coordinate,
+					"ng_app" => "food",
 					"menu" => $menu));			
 			}else
 				return view("index", array(
