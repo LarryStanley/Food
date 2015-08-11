@@ -43,6 +43,8 @@ Route::group(['domain' => '{server}.ncufood.info'], function () {
 		Route::post('/admin/save', "AdminController@saveData");
 		Route::get('/admin', "AdminController@index");
 
+		Route::get('/query/{query}', "SearchController@queryPage");
+
 		Route::get('/api/all', "SearchController@showAllData");
 		Route::get('/api/auto-complete', "SearchController@autoComplete");
 		Route::get('/api/{query}', "SearchController@api");

@@ -103,6 +103,15 @@ class SearchController extends Controller
 			return view("errors/404");
 	}
 
+	public function queryPage($domain, $query) {
+		$result = DB::collection('Info')->where("name", "LIKE", "%".$query."%")->orderBy('query_times', 'desc')->get();
+
+		return view("category", array(
+			"title" => $query." - 中大美食",
+			"results" => $result
+		));
+	}
+
 	public function showAllData() {
 		$data = DB::collection("Info")->get();
 
@@ -117,6 +126,17 @@ class SearchController extends Controller
 
 	public function autoComplete() {
 		$data = DB::collection('Info')->lists("name");
+		
+		$hashTags = DB::collection('Info')->lists("hashTags");
+		foreach ($hashTags as $key => $value) {
+			if ($value) {
+				foreach ($value as $index => $item) {
+					array_push($data, $item[0]);
+				}
+			}
+		}
+
+		$data = array_unique($data);
 
 		return $data;
 	}
