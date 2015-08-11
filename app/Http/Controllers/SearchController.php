@@ -112,7 +112,7 @@ class SearchController extends Controller
 			if (!empty($value["hashTags"])) {
 				foreach ($value["hashTags"] as $index => $hashTag) {
 					similar_text($query, $hashTag[0], $percent);
-					if ($percent > 75) {
+					if ($percent > 90) {
 						array_push($result, $value);		
 						break;				
 					}
