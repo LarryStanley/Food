@@ -12,12 +12,19 @@ angular.module('admin', [])
 		admin.getHashTags = function() {
 			var foodData = '';
 			admin.currentData.hashTags = [];
-			$.each(admin.currentData.menu, function(index, category){
-				foodData += category.category_name;
-				$.each(category.items, function(key, item) {
+			if (admin.currentData.menu[0].category_name) {
+				$.each(admin.currentData.menu, function(index, category){
+					foodData += category.category_name;
+					$.each(category.items, function(key, item) {
+						foodData += item.name + " ";
+					});
+				});
+			} else {
+				console.log("yes");
+				$.each(admin.currentData.menu, function(index, item){
 					foodData += item.name + " ";
 				});
-			});
+			}
 
 			var options = {
 			  workerUrl: '/js/wordfreq.worker.js' };
