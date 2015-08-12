@@ -16,6 +16,9 @@
 				如果找不到你知道的餐廳，歡迎<a href="/add-food" target="_blank">新增餐廳</a><br>
 				如果你有發現餐廳資訊錯誤、網站有問題，歡迎<a href="/feedback" target="blank">回報錯誤</a><br>					
 			</p>
+			<div class="fb-page" data-href="https://www.facebook.com/ncufood"
+  data-width="380" data-hide-cover="false" data-show-facepile="false" 
+  data-show-posts="false"></div>
 		</div>
 	</div>
 </div>
