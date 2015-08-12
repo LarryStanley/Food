@@ -43,6 +43,22 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.ncufood.info/萊姆斯</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/拉亞漢堡</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/比司多</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/熊熊漢堡</loc>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.ncufood.info/NO.17%20White%20House</loc>
   <priority>0.64</priority>
 </url>
@@ -59,19 +75,19 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.ncufood.info/六十甲</loc>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://www.ncufood.info/川%20一品鍋</loc>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>http://www.ncufood.info/迷路</loc>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.ncufood.info/田園美食屋</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/六十甲</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/川%20一品鍋</loc>
   <priority>0.64</priority>
 </url>
 <url>
@@ -87,11 +103,11 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.ncufood.info/饌食園</loc>
+  <loc>http://www.ncufood.info/Sidewalk%20人行道</loc>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.ncufood.info/Sidewalk%20人行道</loc>
+  <loc>http://www.ncufood.info/饌食園</loc>
   <priority>0.64</priority>
 </url>
 <url>
@@ -103,6 +119,26 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.ncufood.info/麥克小姐Brunch</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/歐姆萊思蓋飯洋食(中央店)</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/八方雲集鍋貼水餃專賣店</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/宋師父麵館</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/香煎小舖</loc>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.ncufood.info/小惡魔</loc>
   <priority>0.64</priority>
 </url>
@@ -111,11 +147,11 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.ncufood.info/五餅二魚</loc>
+  <loc>http://www.ncufood.info/Backdoor%20Café</loc>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.ncufood.info/Backdoor%20Café</loc>
+  <loc>http://www.ncufood.info/五餅二魚</loc>
   <priority>0.64</priority>
 </url>
 <url>
@@ -124,6 +160,10 @@
 </url>
 <url>
   <loc>http://www.ncufood.info/小木屋鬆餅</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ncufood.info/花茶大師%20中壢中央店</loc>
   <priority>0.64</priority>
 </url>
 <url>
