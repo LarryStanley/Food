@@ -4,10 +4,10 @@
 <div class="container">
 	<div class="center" id='search'>
 		<div id="title">
-			<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
+			<a href="/"><h1  style="display:inline">中大美食</h1>(其實沒有)</a>
 		</div>
 		<div class="well" style="overflow: auto">
-			<h1>回報錯誤</h1>
+			<h2>回報錯誤</h2>
 			<hr>
 			<form action="/feedback" class="form-horizontal" method="POST" enctype="multipart/form-data" id="errorForm">
 				<div class="form-group-material-orange-500">

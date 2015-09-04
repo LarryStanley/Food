@@ -4,10 +4,10 @@
 <div class="container" ng-controller="MenuController as menu">
 	<div class="center" id='search'>
 		<div id="title">
-			<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
+			<a href="/"><h1  style="display:inline">中大美食</h1>(其實沒有)</a>
 		</div>
 		<div class="well" style="overflow: auto" id="addFood">
-			<h1>新增餐廳</h1>
+			<h2>新增餐廳</h2>
 			<hr>
 			<form action="/add-food" class="form-horizontal" method="POST" enctype="multipart/form-data" id="addFoodForm">
 				<div class="form-group-material-orange-500" id="food-name-group">

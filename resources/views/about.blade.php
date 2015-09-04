@@ -4,10 +4,10 @@
 <div class="container">
 	<div class="center" id="search">
 		<div id="title">
-			<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
+			<a href="/"><h1  style="display:inline">中大美食</h1>(其實沒有)</a>
 		</div>
 		<div class="well"  style="overflow: auto">
-			<h1>關於中大美食</h1>
+			<h2>關於中大美食</h2>
 			<hr>
 			<p>
 				為了讓大家能在尋找餐廳、美食的時候更加的迅速<br>而有了「中大美食」這個網站。<br>

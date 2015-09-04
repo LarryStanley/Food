@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="center">
 		<div id="title">
-			<a href="/"><h1  style="display:inline">中大美食</h1> beta (其實沒有)</a>
+			<a href="/"><h1  style="display:inline">中大美食</h1>(其實沒有)</a>
 		</div>
 		<div id="search">
 			<div class="well" style="overflow: auto">
