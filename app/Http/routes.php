@@ -14,40 +14,42 @@
 Route::group(['domain' => '{server}.ncufood.info'], function () {
 	$myURL = ["beta.ncufood.info", "www.ncufood.info"];
 
-	if (in_array($_SERVER['SERVER_NAME'], $myURL)) {
-	   	Route::get('/', function () {
-			return view("index");
-		});
+   	Route::get('/', function () {
+		return view("index");
+	});
 
-		Route::get('/menu-format', function() {
-			return view("menu-format");
-		});
+	Route::get('/menu-format', function() {
+		return view("menu-format");
+	});
 
-		Route::get('/breakfast', "SearchController@showBreakfast");
-		Route::get('/dine', "SearchController@showDine");
-		Route::get('/drink', "SearchController@showDrink");
-		Route::get('/midnight-snack', "SearchController@showMidnightSnack");
+	Route::get('/breakfast', "SearchController@showBreakfast");
+	Route::get('/dine', "SearchController@showDine");
+	Route::get('/drink', "SearchController@showDrink");
+	Route::get('/midnight-snack', "SearchController@showMidnightSnack");
 
-		Route::get('/auth/facebook', "CommentController@facebookLogin");
-		Route::post('/add-comment', "CommentController@addComment");
+	Route::get('/auth/facebook', "CommentController@facebookLogin");
+	Route::post('/add-comment', "CommentController@addComment");
 
-		Route::get('/add-food', "AddController@index");
-		Route::post('/add-food', "AddController@post");
-		Route::get('/feedback', "AddController@showFeedback");
-		Route::post('/feedback', "AddController@recordFeedback");
+	Route::get('/add-food', "AddController@index");
+	Route::post('/add-food', "AddController@post");
+	Route::get('/feedback', "AddController@showFeedback");
+	Route::post('/feedback', "AddController@recordFeedback");
 
-		Route::get('/about', function() {
-			return view('about');
-		});
+	Route::get('/about', function() {
+		return view('about');
+	});
 
-		Route::post('/admin/save', "AdminController@saveData");
-		Route::get('/admin', "AdminController@index");
+	Route::get('/login', function() {
+		return view('login');
+	});
 
-		Route::get('/query/{query}', "SearchController@queryPage");
+	Route::post('/admin/save', "AdminController@saveData");
+	Route::get('/admin', "AdminController@index");
 
-		Route::get('/api/all', "SearchController@showAllData");
-		Route::get('/api/auto-complete', "SearchController@autoComplete");
-		Route::get('/api/{query}', "SearchController@api");
-		Route::get('/{query}', "SearchController@index"); 
-	}
+	Route::get('/query/{query}', "SearchController@queryPage");
+
+	Route::get('/api/all', "SearchController@showAllData");
+	Route::get('/api/auto-complete', "SearchController@autoComplete");
+	Route::get('/api/{query}', "SearchController@api");
+	Route::get('/{query}', "SearchController@index"); 
 });

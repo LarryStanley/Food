@@ -46,6 +46,20 @@ html, body {
 		color: white;
 		float: right;
 	}
+
+	#loginView {
+		width: 450px;
+		height: 450px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -225px;
+		margin-top: -225px;
+	}
+
+	#loginView .smallBreak br  {
+		display: none;
+	}
 }
 
 @media (min-width: 992px) {
@@ -72,6 +86,20 @@ html, body {
 	#feedbackButtons a{
 		color: white;
 		float: right;
+	}
+
+	#loginView .smallBreak br  {
+		display: none;
+	}
+
+	#loginView {
+		width: 450px;
+		height: 450px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -225px;
+		margin-top: -225px;
 	}
 
 }
@@ -101,6 +129,20 @@ html, body {
 		color: white;
 		float: right;
 	}
+
+	#loginView {
+		width: 450px;
+		height: 450px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -225px;
+		margin-top: -225px;
+	}
+
+	#loginView .smallBreak br  {
+		display: none;
+	}
 }
 
 @media (max-width: 768px) {
@@ -126,6 +168,16 @@ html, body {
 
 	#feedbackButtons a{
 		color: white;
+	}
+
+	#loginView {
+		width: 80%;
+		height: 450px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -40%;
+		margin-top: -225px;
 	}
 }
 
@@ -232,7 +284,7 @@ html, body {
 	color: #424242;
 }
 
-#category {
+#categoryBox {
 	margin-top: 50px;
 }
 
@@ -345,6 +397,10 @@ html, body {
 	padding: 35px 20px 20px 20px;
 }
 
+#likeArea a {
+	margin-right: 5px;
+}
+
 #likeArea a:link {
 	color: white;
 	text-decoration: none;
@@ -366,7 +422,7 @@ html, body {
 }
 
 .likeActive{
-	color: #C62828;	
+	color: #1A237E;
 }
 
 .dislikeActive {
@@ -389,6 +445,46 @@ html, body {
 	text-decoration: none;
 }
 
+#categoryBox ul {
+	background-color: rgba(0,0,0,0);
+}
+
+#categoryBox h2 {
+	margin: 0px 0px 0px 0px;
+}
+
+#categoryBox .btn {
+	margin-bottom: 5px;
+}
+
+#facebookLoginButton {
+	width: 250px;
+	color: white;
+	background-color: #2c5D97;
+	text-align: center;
+	font-size: 20px;
+	padding: 10px 10px 10px 10px;
+}
+
+#facebookLoginButton:link {
+	text-decoration: none;
+}
+
+#facebookLoginButton:visited {
+	text-decoration: none;
+}
+
+#facebookLoginButton:active {
+	text-decoration: none;
+}
+
+#facebookLoginButton:hover {
+	text-decoration: none;
+}
+
+#loginView .content {
+	text-align: center;
+}
 
 .autocomplete-suggestions { border: 0px solid #999; background: #FFF; overflow: auto; color:black; font-size:20px}
 .autocomplete-suggestion { padding: 2px 10px; white-space: nowrap; overflow: hidden; height: 30px;}

@@ -14,7 +14,7 @@ class CommentController extends Controller
 	    $fb = \OAuth::consumer( 'Facebook');
 	    if ( !empty( $code ) ) {
 	        $token = $fb->requestAccessToken( $code );
-	        $result = json_decode( $fb->request( '/me' ), true );
+	        $result = json_decode( $fb->request( '/me?fields=id,link,name&locale=zh_TW' ), true );
 
 	        $userData = DB::collection("users")->where("id", $result['id'])->first();
 	        if (!$userData) {

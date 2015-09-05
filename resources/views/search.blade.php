@@ -90,7 +90,7 @@
 		</div>
 		<div id="comments" itemprop="review">
 			<h3 itemprop="reviewBody">評論</h3>
-			<div id="likeArea"  style="display:none">
+			<div id="likeArea">
 				<a href="#" onclick="return false;" ng-click="food.likeClick()">
 					<sapn id="like">
 						<i class="fa fa-lg fa-thumbs-up"></i> 
