@@ -36,16 +36,16 @@ class SearchController extends Controller
 					if(empty($data['likes']))
 						$data['likes'] = array("like_count" => 0, "dislike_count" => 0, "like_people" => array(), "dislike_people" => array());
 
-					$commentButton = "<a class='btn btn-default' style='color: white' href='/auth/facebook'>登入新增評論</a>";
+					$commentButton = "<a class='btn btn-default' style='color: white' href='/login/".$query."'>登入新增評論</a>";
 					$likeArea = '
 					<div id="likeArea">
-						<a href="/login">
+						<a href="/login/'.$query.'">
 							<sapn id="like">
 								<i class="fa fa-lg fa-thumbs-up"></i> 
 								<span class="counter">'.$data['likes']['like_count'].'</span> 					
 							</sapn> 
 						</a>
-						<a href="/login">
+						<a href="/login/'.$query.'">
 							<span id="dislike">
 								<i class="fa fa-lg fa-thumbs-down"></i>		
 								<span  class="counter">'.$data['likes']['dislike_count'].'</span>			

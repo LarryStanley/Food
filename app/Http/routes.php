@@ -41,7 +41,17 @@ Route::group(['domain' => '{server}.ncufood.info'], function () {
 	});
 
 	Route::get('/login', function() {
-		return view('login');
+		if (!Session::get('facebookId'))
+			return view('login');
+		else
+			return redirect('/');
+	});
+
+	Route::get('/login/{next}', function($domain, $next) {
+		if (!Session::get('facebookId'))
+			return view('login');
+		else
+			return redirect('/'.$next);
 	});
 
 	Route::post('/admin/save', "AdminController@saveData");

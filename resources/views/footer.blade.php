@@ -6,7 +6,7 @@
 				if (Session::get("facebookId"))
 					echo '<a href="/add-food" class="btn btn-default" style="color: white;">立即新增</a>';
 				else
-					echo '<a href="/add-food" class="btn btn-default" style="color: white;">登入新增</a>';
+					echo '<a href="/login/add-food" class="btn btn-default" style="color: white;">登入新增</a>';
 			?>
 		</div>
 		<div class="col-md-6 col-sm-6" id="feedbackButtons">
