@@ -395,10 +395,7 @@ html, body {
 	right: 0;
 	position: absolute;
 	padding: 35px 20px 20px 20px;
-}
-
-#likeArea a {
-	margin-right: 5px;
+	color: #607D8B;
 }
 
 #likeArea a:link {
@@ -419,6 +416,10 @@ html, body {
 #likeArea a:hover {
 	color: white;
 	text-decoration: none;
+}
+
+#likeArea span {
+	margin-left: 5px;
 }
 
 .likeActive{

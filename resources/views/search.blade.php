@@ -152,8 +152,8 @@
 			<form  id="addCommentForm" action="/add-comment" class="form-group-material-orange-500" method="POST">
 	      		<div class="modal-body">
 						<textarea class="form-control" rows="5" name="comment"></textarea>
-						<input type="hidden" name="food_name" value="<?php echo $name; ?>">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="food_name" value="<?php echo $name; ?>" id="food_name">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
 						<p>您將用Facebook身份對「<?php echo $name;?>」進行評論</p>
 	      		</div>
 		      	<div class="modal-footer">

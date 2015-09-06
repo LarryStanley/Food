@@ -31,35 +31,61 @@ class SearchController extends Controller
 
 				$commentButton = '';
 				$likeArea = '';
+
 				if (!Session::get('facebookId')){
+					if(empty($data['likes']))
+						$data['likes'] = array("like_count" => 0, "dislike_count" => 0, "like_people" => array(), "dislike_people" => array());
+
 					$commentButton = "<a class='btn btn-default' style='color: white' href='/auth/facebook'>登入新增評論</a>";
 					$likeArea = '
 					<div id="likeArea">
 						<a href="/login">
 							<sapn id="like">
 								<i class="fa fa-lg fa-thumbs-up"></i> 
-								<span class="counter">{{food.likeCounter}}</span> 					
+								<span class="counter">'.$data['likes']['like_count'].'</span> 					
 							</sapn> 
 						</a>
 						<a href="/login">
 							<span id="dislike">
 								<i class="fa fa-lg fa-thumbs-down"></i>		
-								<span  class="counter">{{food.dislikeCounter}}</span>			
+								<span  class="counter">'.$data['likes']['dislike_count'].'</span>			
 							</span>
 						</a>
 					</div>';
 				} else {
+					$likeClass = '';
+					$dislikeClass = '';
+					if (!empty($data['likes'])) {
+						foreach ($data['likes']['like_people'] as $key => $value) {
+							if ($value['id'] == Session::get('facebookId')) {
+								$likeClass = 'likeActive';
+								break;
+							}
+						}
+
+						if ($likeClass != 'likeActive') {
+							foreach ($data['likes']['dislike_people'] as $key => $value) {
+								if ($value['id'] == Session::get('facebookId')) {
+									$dislikeClass = 'dislikeActive';
+									break;
+								}
+							}
+						}
+					} else {
+						$data['likes'] = array("like_count" => 0, "dislike_count" => 0, "like_people" => array(), "dislike_people" => array());
+					}
+
 					$commentButton = '<button type="button" class="btn btn-default" data-toggle="modal" data-target="#addCommentModal" style="color:white">新增評論</button>';
 					$likeArea = '
 								<div id="likeArea">
-									<a href="#" onclick="return false;" ng-click="food.likeClick()">
-										<sapn id="like">
+									<a href="#" onclick="return false;" ng-click="food.likeClick()" ng-init="food.likeCounter = '.$data['likes']['like_count'].'">
+										<sapn id="like" class="'.$likeClass.'">
 											<i class="fa fa-lg fa-thumbs-up"></i> 
 											<span class="counter">{{food.likeCounter}}</span> 					
 										</sapn> 
 									</a>
-									<a href="#" onclick="return false;" ng-click="food.dislikeClick()">
-										<span id="dislike">
+									<a href="#" onclick="return false;" ng-click="food.dislikeClick()" ng-init="food.dislikeCounter = '.$data['likes']['dislike_count'].'">
+										<span id="dislike" class="'.$dislikeClass.'">
 											<i class="fa fa-lg fa-thumbs-down"></i>		
 											<span  class="counter">{{food.dislikeCounter}}</span>			
 										</span>

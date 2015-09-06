@@ -16,12 +16,25 @@
 				if (empty($value['prove']))
 					$value['prove'] = 'true';
 				if ($value['prove'] == 'true') {
+					if (empty($value['likes']))
+						$value['likes'] = array("like_count" => 0, "dislike_count" => 0, "like_people" => array(), "dislike_people" => array());
+
 					$result = '<a class="resultBox" href="/'.$value['name'].'">';
 					if ($index > 0)
 						$result .= '<div class="well result" id="result" style="margin-top: 20px">';
 					else
 						$result .= '<div class="well result" id="result">';
-					echo $result.'<h2 stlye="display: inline">'.$value['name'].'</h2></div></a>';
+					echo $result.'<h2 stlye="display: inline">'.$value['name'].'</h2>
+					<div id="likeArea" style="margin-top: 10px">
+						<sapn id="like">
+							<i class="fa fa-lg fa-thumbs-up"></i> 
+							<span class="counter">'.$value['likes']['like_count'].'</span> 					
+						</sapn> 
+						<span id="dislike">
+							<i class="fa fa-lg fa-thumbs-down"></i>		
+							<span  class="counter">'.$value['likes']['dislike_count'].'</span>			
+						</span>
+					</div></div></a>';
 				}
 			}
 		}else
