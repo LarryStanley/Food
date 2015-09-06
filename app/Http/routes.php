@@ -29,6 +29,7 @@ Route::group(['domain' => '{server}.ncufood.info'], function () {
 
 	Route::get('/auth/facebook', "CommentController@facebookLogin");
 	Route::post('/add-comment', "CommentController@addComment");
+	Route::post('/add-like', "CommentController@addLike");
 
 	Route::get('/add-food', "AddController@index");
 	Route::post('/add-food', "AddController@post");

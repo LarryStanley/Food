@@ -55,6 +55,35 @@ class CommentController extends Controller
  		} else {
  			echo "please login with facebook.";
  		}
+ 	}
 
+ 	public function addLike() {
+ 		if (Session::get('facebookId')) {
+ 			$userData = DB::collection("users")->where("id", Session::get('facebookId'))->first();
+ 			$foodData = DB::collection("Info")->where("name", Input::get('food_name'))->first();
+
+ 			if (empty($foodData['likes'])) {
+ 				DB::collection("Info")->where("name", Input::get('food_name'))->push("likes", ["like_count" => 0, "dislike_count" => 0, "like_peolple" => [], "dilike_people" => []]);
+ 				$foodData = DB::collection("Info")->where("name", Input::get('food_name'))->first();
+ 			}
+
+ 			if ($foodData) {
+ 				$likeData = $foodData['likes'];
+
+ 				if (empty($likeData)) {
+
+ 				}
+
+
+ 				if (Input::get('type') == 'dislike') {
+ 				} else {
+
+ 				}
+
+ 			} else
+ 				return response()->json(["message" => "error"]);
+ 		} else {
+ 			echo "please login with facebook";
+ 		}
  	}
 }

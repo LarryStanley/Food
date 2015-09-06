@@ -60,7 +60,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	<script src="/js/menu.js"></script>
 	<script src="/js/food.js"></script>
-	<script src="/js/main.min.js"></script>
+	<script src="/js/main.js"></script>
 
 </head>
 <body>

@@ -90,20 +90,7 @@
 		</div>
 		<div id="comments" itemprop="review">
 			<h3 itemprop="reviewBody">評論</h3>
-			<div id="likeArea">
-				<a href="#" onclick="return false;" ng-click="food.likeClick()">
-					<sapn id="like">
-						<i class="fa fa-lg fa-thumbs-up"></i> 
-						<span class="counter"><?php echo "{{food.likeCounter}}";?></span> 					
-					</sapn> 
-				</a>
-				<a href="#" onclick="return false;" ng-click="food.dislikeClick()">
-					<span id="dislike">
-						<i class="fa fa-lg fa-thumbs-down"></i>		
-						<span  class="counter"><?php echo "{{food.dislikeCounter}}";?></span>			
-					</span>
-				</a>
-			</div>
+			<?php echo $likeArea;?>
 			<hr>
 			<?php 
 				if (count($comments)) {
@@ -115,7 +102,7 @@
 						else
 							$result = "<div style='display: none' class='row'>";
 						$result .= "<div class='col-sm-1'><a href='".$comment['user']['link']."' target='_blank'><img src='http://graph.facebook.com/".$comment['user']['id']."/picture?type=square' class='img-circle' style='margin-top: 5px'></a></div>";
-						$result .= "<div class='col-sm-8'><h4>".$comment['user']['name']."</h4>";
+						$result .= "<div class='col-sm-8'><a href='".$comment['user']['link']."' target='_blank'><h4>".$comment['user']['name']."</h4></a>";
 						$result .= "<p>".$comment['comment']."</p></div></div>";
 
 						echo $result;				

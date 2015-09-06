@@ -71,8 +71,9 @@ function search() {
 }
 
 function showMoreComment() {
-	$('#commnet').find('.row').each(function (i, el) {
-        $(this).show();
+	console.log("yes");
+	$('#comment').find('.row').each(function (i, el) {
+        $(el).show();
 	});
 
 	$('#showMoreCommentButton').hide();

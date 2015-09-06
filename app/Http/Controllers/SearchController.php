@@ -30,10 +30,42 @@ class SearchController extends Controller
 					$comments = array_reverse($data['comments']);
 
 				$commentButton = '';
-				if (!Session::get('facebookId'))
+				$likeArea = '';
+				if (!Session::get('facebookId')){
 					$commentButton = "<a class='btn btn-default' style='color: white' href='/auth/facebook'>登入新增評論</a>";
-				else
+					$likeArea = '
+					<div id="likeArea">
+						<a href="/login">
+							<sapn id="like">
+								<i class="fa fa-lg fa-thumbs-up"></i> 
+								<span class="counter">{{food.likeCounter}}</span> 					
+							</sapn> 
+						</a>
+						<a href="/login">
+							<span id="dislike">
+								<i class="fa fa-lg fa-thumbs-down"></i>		
+								<span  class="counter">{{food.dislikeCounter}}</span>			
+							</span>
+						</a>
+					</div>';
+				} else {
 					$commentButton = '<button type="button" class="btn btn-default" data-toggle="modal" data-target="#addCommentModal" style="color:white">新增評論</button>';
+					$likeArea = '
+								<div id="likeArea">
+									<a href="#" onclick="return false;" ng-click="food.likeClick()">
+										<sapn id="like">
+											<i class="fa fa-lg fa-thumbs-up"></i> 
+											<span class="counter">{{food.likeCounter}}</span> 					
+										</sapn> 
+									</a>
+									<a href="#" onclick="return false;" ng-click="food.dislikeClick()">
+										<span id="dislike">
+											<i class="fa fa-lg fa-thumbs-down"></i>		
+											<span  class="counter">{{food.dislikeCounter}}</span>			
+										</span>
+									</a>
+								</div>';
+				}
 					
 				// count query times
 				$queryTimes = 1;
@@ -90,6 +122,7 @@ class SearchController extends Controller
 					"note" => $note,
 					"comments" => $comments,
 					"newCommentButton" => $commentButton,
+					"likeArea" => $likeArea,
 					"recentView" => $recentView,
 					"metaImage" => $metaImage,
 					"coordinate" => $coordinate,
