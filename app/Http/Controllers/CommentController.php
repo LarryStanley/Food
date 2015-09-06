@@ -70,12 +70,8 @@ class CommentController extends Controller
  			if ($foodData) {
  				$likeData = $foodData['likes'];
 
- 				if (empty($likeData)) {
-
- 				}
-
-
  				if (Input::get('type') == 'dislike') {
+ 					
  				} else {
 
  				}
