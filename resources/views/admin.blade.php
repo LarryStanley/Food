@@ -1,5 +1,9 @@
 @extends("default")
 
+@section("head")
+<link rel="stylesheet" href="/css/main.css">
+@stop
+
 @section("content")
 <script src="/js/wordfreq.min.js"></script>
 <script src="/js/admin.js"></script>

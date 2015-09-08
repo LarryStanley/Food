@@ -57,7 +57,7 @@ html, body {
 		margin-top: -225px;
 	}
 
-	#loginView .smallBreak br  {
+	.smallBreak br  {
 		display: none;
 	}
 }
@@ -88,7 +88,7 @@ html, body {
 		float: right;
 	}
 
-	#loginView .smallBreak br  {
+	.smallBreak br  {
 		display: none;
 	}
 
@@ -140,7 +140,7 @@ html, body {
 		margin-top: -225px;
 	}
 
-	#loginView .smallBreak br  {
+	.smallBreak br  {
 		display: none;
 	}
 }
@@ -180,7 +180,6 @@ html, body {
 		margin-top: -225px;
 	}
 }
-
 
 .form-control::-moz-placeholder {
 	color: white;

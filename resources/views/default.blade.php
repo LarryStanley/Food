@@ -52,7 +52,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/animate.min.css">
-	<link rel="stylesheet" href="/css/main.css">
 
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="/js/jquery.autocomplete.min.js"></script>
@@ -61,6 +60,8 @@
 	<script src="/js/menu.js"></script>
 	<script src="/js/food.js"></script>
 	<script src="/js/main.js"></script>
+
+	@yield("head")
 
 </head>
 <body>
