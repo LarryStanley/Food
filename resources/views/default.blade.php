@@ -13,7 +13,7 @@
 	<meta property="og:description" content="
 		<?php
 			if (!empty($name)) echo $name." ";
-			else echo "立即查詢中大附近美食（不用找了，其實沒有）";
+			else echo "立即查詢中大附近美食";
 			if (!empty($telephone)) echo $telephone." ";
 			if (!empty($type)) echo $type." ";
 			if (!empty($address)) echo $address." ";

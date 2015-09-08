@@ -37,7 +37,7 @@ Route::group(['domain' => '{server}.ncufood.info'], function () {
 	Route::post('/feedback', "AddController@recordFeedback");
 
 	Route::get('/about', function() {
-		return view('about');
+		return view('about', ["title" => "關於中大美食", "metaImage" => "http://www.ncufood.info/image/about.jpg"]);
 	});
 
 	Route::get('/login', function() {
