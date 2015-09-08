@@ -12,16 +12,16 @@
 	<div class="container">
 		<div class="center animated fadeIn" id="search">
 			<div class="row">
-				<div class="col-md-7 col-sm-7">
+				<div class="col-md-8 col-sm-8">
 					<p>
 						<div class="important">
 							你<br>在美食的十字路口<span class="smallBreak"><br></span>迷失了嗎？<br>
-							所有的美食指南盡在
+							所有的<span class="smallBreak"><br></span>美食指南盡在
 						</div>
 						<div class="highlight">中大美食</div>
 					</p>
 				</div>
-				<div class="col-md-5 col-sm-5 iphone">
+				<div class="col-md-4 col-sm-4 iphone">
 					<img src="/image/one.png" alt="one" width="300px" style="margin-top: -150px;">
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 				</a>
 			</div>
 		</div>
-		<p class="introduction">不管是<span class="smallBreak"><br></span>早餐、宵夜、飲料、點心<br>任何時候，一切為您準備</p>
+		<p class="introduction">不管是早餐、宵夜、<span class="smallBreak"><br></span>飲料、點心<br>任何時候，<span class="smallBreak"><br></span>一切為您準備</p>
 	</div>
 </div>
 <div id="pageThree">
@@ -94,7 +94,7 @@
 	<div class="center" id="search">
 		<h2>菜單資訊</h2>
 		<p class="introduction">
-			找同學代買，卻不知菜單？<br>
+			找同學代買，<span class="smallBreak"><br></span>卻不知菜單？<br>
 			點餐一直都是這麼容易
 		</p>
 		<div class="well">
@@ -308,7 +308,7 @@
 	<div class="center">
 		<h2 style="color: white">評論</h2>
 		<p class="introduction">
-			美食饗宴後的精彩心得，<span class="smallBreak"><br></span>等你分享
+			美食饗宴後的<span class="smallBreak"><br></span>精彩心得，等你分享
 		</p>
 		<div class="well" style="padding: 0px 0px 0px 0px;">
 			<div id="comments" itemprop="review"><h3 itemprop="reviewBody">評論</h3><div id="likeArea"><a href="/login/捷捷廚房"><sapn id="like"><i class="fa fa-lg fa-thumbs-up"></i> <span class="counter">2</span> </sapn> </a><a href="/login/捷捷廚房"><span id="dislike"><i class="fa fa-lg fa-thumbs-down"></i><span class="counter">0</span></span></a></div><hr><div id="comment" class="container"><div class="row"><div class="col-sm-1"><a href="https://www.facebook.com/app_scoped_user_id/951991988173358/" target="_blank"><img src="http://graph.facebook.com/951991988173358/picture?type=square" class="img-circle" style="margin-top: 5px"></a></div><div class="col-sm-8"><a href="https://www.facebook.com/app_scoped_user_id/951991988173358/" target="_blank"><h4>Wu BoFan</h4></a><p>豪吃!</p></div></div></div><a class="btn btn-default" style="color: white" href="/login/捷捷廚房" target="blank">登入新增評論</a></div>
@@ -318,7 +318,7 @@
 <div id="pageSix">
 	<div class="center">
 		<p class="important">立即免費使用</p>
-		<p class="introduction">放心 <span class="smallBreak"><br></span>我們不會收取您任何費用</p>
+		<p class="introduction">放心 <span class="smallBreak"><br></span>我們不會收取<span class="smallBreak"><br></span>您任何費用</p>
 		<hr width="250">
 		<a href="/login" id="facebookLoginButton">
 			<i class="fa fa-facebook"></i> | 用Facebook登入

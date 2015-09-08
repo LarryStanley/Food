@@ -82,6 +82,15 @@ html, body {
 	#pageThree {
 		color: white;
 	}
+
+	#pageSix .center {
+	position: absolute;
+	text-align: center;
+	height: 250px;
+	margin-top: -125px;
+	top: 50%;
+	left: 50%;
+}
 }
 
 @media (min-width: 992px) {
@@ -132,6 +141,15 @@ html, body {
 
 	#pageThree {
 		color: white;
+	}
+
+	#pageSix .center {
+		position: absolute;
+		text-align: center;
+		height: 250px;
+		margin-top: -125px;
+		top: 50%;
+		left: 50%;
 	}
 }
 
@@ -184,6 +202,15 @@ html, body {
 	#pageThree {
 		color: white;
 	}
+
+	#pageSix .center {
+		position: absolute;
+		text-align: center;
+		height: 250px;
+		margin-top: -125px;
+		top: 50%;
+		left: 50%;
+	}
 }
 
 @media (max-width: 768px) {
@@ -215,10 +242,11 @@ html, body {
 	}
 
 	#pageTwo {
-		min-height: 450px;
+		min-height: 500px;
 	}
 
 	#pageFour .center {
+		padding-top: 20px;
 		position: absolute;
 		width: 80%;
 		height: 450px;
@@ -239,6 +267,11 @@ html, body {
 
 	#pageThree {
 		color: #37474F;
+	}
+
+	#pageSix {
+		min-height: 400px;
+		text-align: center;
 	}
 }
 
@@ -277,7 +310,7 @@ html, body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 550px;
+	min-height: 610px;
 }
 
 .well #info hr { 
@@ -331,7 +364,7 @@ html, body {
 	width: 100%;
 	height: 55%;
 	background-attachment: fixed;
-	min-height: 500px;
+	min-height: 530px;
 
 	background: url(/image/pageFive.jpg) no-repeat center center; 
 	-webkit-background-size: cover;
@@ -395,13 +428,4 @@ html, body {
 
 #comments a:hover {
 	text-decoration: none;
-}
-
-#pageSix .center {
-	position: absolute;
-	text-align: center;
-	height: 250px;
-	margin-top: -125px;
-	top: 50%;
-	left: 50%;
 }
