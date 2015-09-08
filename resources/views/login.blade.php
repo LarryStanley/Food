@@ -8,7 +8,7 @@
 <div class="container">
 	<div id="loginView">
 		<div id="title">
-			<a href="/"><h1  style="display:inline; text-align: left">中大美食</h1>(其實沒有)</a>
+			<a href="/"><h1  style="display:inline; text-align: left">中大美食</h1></a>
 		</div>
 		<div class="well content"  style="overflow: auto">
 			<h2>登入</h2>

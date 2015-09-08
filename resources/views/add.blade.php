@@ -8,7 +8,7 @@
 <div class="container" ng-controller="MenuController as menu">
 	<div class="center" id='search'>
 		<div id="title">
-			<a href="/"><h1  style="display:inline">中大美食</h1>(其實沒有)</a>
+			<a href="/"><h1  style="display:inline">中大美食</h1></a>
 		</div>
 		<div class="well" style="overflow: auto" id="addFood">
 			<h2>新增餐廳</h2>
