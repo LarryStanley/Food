@@ -86,8 +86,8 @@ html, body {
 	#pageSix .center {
 	position: absolute;
 	text-align: center;
-	height: 250px;
-	margin-top: -125px;
+	height: 350px;
+	margin-top: -175px;
 	top: 50%;
 	left: 50%;
 }
@@ -146,8 +146,8 @@ html, body {
 	#pageSix .center {
 		position: absolute;
 		text-align: center;
-		height: 250px;
-		margin-top: -125px;
+		height: 350px;
+		margin-top: -175px;
 		top: 50%;
 		left: 50%;
 	}
@@ -206,8 +206,8 @@ html, body {
 	#pageSix .center {
 		position: absolute;
 		text-align: center;
-		height: 250px;
-		margin-top: -125px;
+		height: 350px;
+		margin-top: -175px;
 		top: 50%;
 		left: 50%;
 	}
@@ -270,7 +270,7 @@ html, body {
 	}
 
 	#pageSix {
-		min-height: 400px;
+		min-height: 500px;
 		text-align: center;
 	}
 }
@@ -408,6 +408,7 @@ html, body {
 	position: relative;
 	background-attachment: fixed;
 	color: white;
+	margin-bottom: 20px;
 }
 
 #comments a {

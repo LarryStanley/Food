@@ -323,7 +323,8 @@
 		<a href="/login" id="facebookLoginButton">
 			<i class="fa fa-facebook"></i> | 用Facebook登入
 		</a><br><hr width="250">
-		<a href="/" class="btn btn-default" style="color:white">不登入直接使用</a>
+		<a href="/" class="btn btn-default" style="color:white">不登入直接使用</a><br>
+		<div class="fb-page" data-href="https://www.facebook.com/ncufood" data-height="100" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ncufood"><a href="https://www.facebook.com/ncufood">中大美食</a></blockquote></div></div>
 	</div>
 </div>
 @stop
