@@ -16,7 +16,7 @@ html, body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 	
-	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif;
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
 
 	color:white;
 }

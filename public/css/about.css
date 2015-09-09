@@ -1,21 +1,10 @@
 html, body {
 	color: #37474F;
-
-	background: rgba(254,146,110,1);
-	background: -moz-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,146,110,1)), color-stop(100%, rgba(214,71,93,1)));
-	background: -webkit-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
-	background: -o-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
-	background: -ms-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
-	background: linear-gradient(to bottom, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe926e', endColorstr='#d6475d', GradientType=0 );
 		
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	padding: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 	
 	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif;
 	overflow-x: hidden; 

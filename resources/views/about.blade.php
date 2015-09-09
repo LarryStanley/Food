@@ -10,25 +10,25 @@
 @section("content")
 <div class="page" id="pageOne">
 	<div class="container">
-		<div class="center animated fadeIn" id="search">
+		<div class="center" id="search">
 			<div class="row">
-				<div class="col-md-8 col-sm-8">
+				<div class="col-md-8 col-sm-8  animated fadeInLeft">
 					<p>
 						<div class="important">
 							你<br>在美食的十字路口<span class="smallBreak"><br></span>迷失了嗎？<br>
 							所有的<span class="smallBreak"><br></span>美食指南盡在
 						</div>
-						<div class="highlight">中大美食</div>
+						<a href="/" class="btn btn-default" style="color: white" target="_blank"><div class="highlight">中大美食</div></a>
 					</p>
 				</div>
-				<div class="col-md-4 col-sm-4 iphone">
-					<img src="/image/one.png" alt="one" width="300px" style="margin-top: -150px;">
+				<div class="col-md-4 col-sm-4 iphone animated fadeInRight">
+					<a href="/" target="_blank"><img src="/image/one.png" alt="one" width="300px" style="margin-top: -150px;"></a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="animated fadeIn" id="downMessage" style="position: absolute; left: 50%; bottom:0; padding: 10px 10px 10px 10px;">
-		<div style="position: relative; left: -50%; text-align:center">
+	<div id="downMessage" style="position: absolute; left: 50%; bottom:0; padding: 10px 10px 10px 10px;">
+		<div style="position: relative; left: -50%; text-align:center; font-size: 16px;">
 			下拉查看詳細介紹<br><i class="fa fa-chevron-down"></i>
 		</div>
 	</div>
@@ -324,7 +324,25 @@
 			<i class="fa fa-facebook"></i> | 用Facebook登入
 		</a><br><hr width="250">
 		<a href="/" class="btn btn-default" style="color:white">不登入直接使用</a><br>
+		<div class="fb-share-button" data-href="http://www.ncufood.info/about" data-layout="button_count"></div><br><br>
 		<div class="fb-page" data-href="https://www.facebook.com/ncufood" data-height="100" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ncufood"><a href="https://www.facebook.com/ncufood">中大美食</a></blockquote></div></div>
 	</div>
 </div>
+<script>
+	showBounce();
+	function showBounce() {
+		$("#downMessage").addClass("animated bounce");
+		setTimeout(function(){
+			removeBounce();
+		}, 2000);
+	}
+
+	function removeBounce() {
+		$("#downMessage").removeClass("animated bounce");
+		setTimeout(function() {
+			showBounce();
+		}, 500);
+	}
+
+</script>
 @stop
