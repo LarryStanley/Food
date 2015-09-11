@@ -98,10 +98,10 @@
 										<?php echo "{{hashTag[0]}}";?>
 									</span>
 								</div>
-								<button class="btn btn-default" style="color: white" ng-click="admin.getHashTags()">取得Hash Tags</button>
-								<button class="btn btn-default" style="color: white" ng-click="admin.caculatePrice()">計算價格區間</button>
 							</div>
 						</div>
+						<button class="btn btn-default" style="color: white" ng-click="admin.getHashTags()">取得Hash Tags</button><br>
+						<button class="btn btn-default" style="color: white" ng-click="admin.caculatePrice()">計算價格區間</button>
 					</div>
 					<div id="editMenuModalContentAdmin">
 						<button style="color: white" onclick="showMenu()" class="btn btn-default">編輯菜單</button>
