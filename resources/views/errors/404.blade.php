@@ -16,6 +16,7 @@
 				<h1>404 找不到頁面！！</h1>
 				<hr>
 				<p>真難過，找不到你想要找的頁面</p>
+				<p>你 在美食的十字路口中迷失了嗎？<br>趕快用「<a href="/">中大美食</a>」找到對的方向</p>
 				<?php 
 					$myURL = ["beta.ncufood.info", "www.ncufood.info"];
 					if (!in_array($_SERVER['SERVER_NAME'], $myURL)) {
