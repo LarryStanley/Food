@@ -29,6 +29,10 @@
 				</li>
 				<li>類型：<?php echo $type;?></li>
 				<li>外送：<?php echo $togo;?></li>
+				<?php
+					if (!empty($priceInterval))
+						echo "<li>價位：".$priceInterval."</li>";
+				?>
 				<li>備註：<?php echo $note;?></li>
 			</ul>
 		</div>

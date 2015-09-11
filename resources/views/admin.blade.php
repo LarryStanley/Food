@@ -86,6 +86,12 @@
 								</div>
 							</div>
 							<div class="form-group-material-grey-200">
+								<label for="" class="col-md-2 control-label">價格區間</label>
+								<div class="col-md-9 col-sm-9">
+									<input type="text" ng-model="admin.currentData.priceInterval" class="form-control" placeholder="價格區間">
+								</div>
+							</div>
+							<div class="form-group-material-grey-200">
 								<label for="" class="col-md-2 control-label">Hash Tag</label>
 								<div class="col-md-10 col-sm-10">
 									<span ng-repeat="hashTag in admin.currentData.hashTags">
@@ -93,6 +99,7 @@
 									</span>
 								</div>
 								<button class="btn btn-default" style="color: white" ng-click="admin.getHashTags()">取得Hash Tags</button>
+								<button class="btn btn-default" style="color: white" ng-click="admin.caculatePrice()">計算價格區間</button>
 							</div>
 						</div>
 					</div>

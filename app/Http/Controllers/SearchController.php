@@ -138,10 +138,14 @@ class SearchController extends Controller
 					$metaImage = $this->createImage($data['name']);
 				}
 
+				if (empty($data['priceInterval']))
+					$data['priceInterval'] = '';
+
 				return view("search", array(
 					"title" => $data['name']." - 中大美食",
 					"name" => $data['name'],
 					"telephone" => $data['telephone'],
+					"priceInterval" => $data['priceInterval'],
 					"type" => $data['type'],
 					"address" => $data['address'],
 					"togo" => $data['togo'],

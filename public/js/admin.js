@@ -33,6 +33,46 @@ angular.module('admin', [])
 			});
 		}
 
+		admin.caculatePrice = function() {
+			var deviation = 0;
+			var mean = 0;
+			var itemLength = 0;
+			
+			// calculate mean 
+			if (admin.currentData.menu[0].category_name) {
+				$.each(admin.currentData.menu, function(index, category){
+					$.each(category.items, function(key, item) {
+						itemLength++;
+						mean += parseInt(item.price);
+					});
+				});
+			} else {
+				$.each(admin.currentData.menu, function(index, item){
+					itemLength++;
+					mean += parseInt(item.price);
+				});
+			}
+
+			mean = mean / itemLength;
+
+			// calculate deviation
+			if (admin.currentData.menu[0].category_name) {
+				$.each(admin.currentData.menu, function(index, category){
+					$.each(category.items, function(key, item) {
+						deviation += Math.pow((parseInt(item.price) - mean), 2);
+					});
+				});
+			} else {
+				$.each(admin.currentData.menu, function(index, item){
+					deviation += Math.pow((parseInt(item.price) - mean), 2);
+				});
+			}
+
+			deviation = Math.sqrt(deviation / (itemLength -1));
+
+			admin.currentData.priceInterval = parseInt(5 * Math.round((mean - deviation)/5)) + " ~ " + parseInt(5 * Math.round((mean + deviation)/5));
+		}
+
 		$http.get('/api/all').
     		success(function(data, status, headers, config) {
     			admin.data = data;

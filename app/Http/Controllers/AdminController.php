@@ -9,20 +9,30 @@ use Session;
 
 class AdminController extends Controller
 {
-	public function index() {
-		if (Session::get('facebookId') == '867794553236067') {
-
+	public function index($domain) {
+		if ($domain == "beta") {
 			$names = DB::collection("Info")->lists("name");
 
-			return view("admin", array(
-				"foodName" => $names,
-				"ng_app" => "admin",
-				"title" => "管理介面 - 中大美食"
-				)
-			);
-		}else
-			return view("errors/404");
+				return view("admin", array(
+					"foodName" => $names,
+					"ng_app" => "admin",
+					"title" => "管理介面 - 中大美食"
+					)
+				);
+		} else {
+			if (Session::get('facebookId') == '867794553236067') {
 
+				$names = DB::collection("Info")->lists("name");
+
+				return view("admin", array(
+					"foodName" => $names,
+					"ng_app" => "admin",
+					"title" => "管理介面 - 中大美食"
+					)
+				);
+			}else
+				return view("errors/404");
+		}
 	}
 
 	public function saveData() {
