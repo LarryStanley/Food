@@ -55,7 +55,7 @@
 								else
 									echo "<tr style='display:none'>";
 								echo "<td>".$item['name']."</td>";
-								echo "<td>".$item['price']."</td>";
+								echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick()' style='color: #FF5722'>+</button></td>";
 								if (!empty($item['note']))
 									echo "<td>".$item['note']."</td>";
 								else
@@ -82,7 +82,7 @@
 								foreach ($category['items'] as $key => $item) {
 									echo "<tr>";
 									echo "<td>".$item['name']."</td>";
-									echo "<td>".$item['price']."</td>";
+									echo "<td>".$item['price']." <button class='btn btn-default orderButton' style='color: #FF5722'>+</button></td>";
 									if (!empty($item['note']))
 										echo "<td>".$item['note']."</td>";
 									else

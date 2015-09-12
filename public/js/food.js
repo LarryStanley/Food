@@ -1,6 +1,7 @@
 angular.module('food', [])
 	.controller('FoodController', function($scope, $http) {
 		var food = this;
+		food.order = [];
 		food.likeClick = function() {
 			$.post("/add-like", {
 				"type" : "like",
@@ -43,6 +44,10 @@ angular.module('food', [])
 				}
 				$scope.$apply();
 			});
+		}
+
+		food.orderClick = function(name, price) {
+
 		}
 
 	});
