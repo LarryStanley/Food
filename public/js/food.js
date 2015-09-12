@@ -2,6 +2,7 @@ angular.module('food', [])
 	.controller('FoodController', function($scope, $http) {
 		var food = this;
 		food.order = [];
+		food.totalPrice = 0;
 		food.likeClick = function() {
 			$.post("/add-like", {
 				"type" : "like",
@@ -47,7 +48,45 @@ angular.module('food', [])
 		}
 
 		food.orderClick = function(name, price) {
+			var itemExist = false;
+			$.each(food.order, function(index, item) {
+				if (item['name'] === name) {
+					food.order[index]['count']++;
+					itemExist = true;
+					return false;
+				}
+			});
 
+			if (!itemExist) {
+				var item = {
+					"name" : name,
+					"price" : price,
+					"count" : 1
+				};
+
+				food.order.push(item);
+			}
+
+			food.totalPrice += price;
+			$("#order").show();
+		}
+
+		food.orderCancel = function(name, price) {
+			$.each(food.order, function(index, item) {
+				if (item['name'] === name) {
+					food.order[index]['count']--;
+
+					if (item['count'] == 0) {
+						food.order.splice(index, 1);
+					}
+
+					if (food.order.length == 0)
+						$("#order").hide();
+
+					food.totalPrice -= price;
+					return false;
+				}
+			});
 		}
 
 	});

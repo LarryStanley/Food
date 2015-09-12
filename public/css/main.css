@@ -181,6 +181,13 @@ html, body {
 	}
 }
 
+@media (max-width: 600px) {
+	.note {
+		display: none;
+	}
+
+}
+
 .form-control::-moz-placeholder {
 	color: white;
 }
@@ -509,6 +516,21 @@ html, body {
 .orderButton {
 	margin: 0px 10px 0px 10px;
 	padding: 7px 7px 7px 7px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+	padding: 7px 7px 7px 7px;
+}
+
+#order .orderButton{
+	margin: 0px 5px 0px 5px;
+}
+
+#orderResult {
+	float: right;
+	text-align: right;
 }
 
 .autocomplete-suggestions { border: 0px solid #999; background: #FFF; overflow: auto; color:black; font-size:20px}

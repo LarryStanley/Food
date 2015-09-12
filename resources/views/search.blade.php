@@ -38,6 +38,31 @@
 		</div>
 			<div id="menu">
 				<h3>菜單</h3>
+				<div id="order" class="panel panel-default" style="display: none">
+					<div class="panel-heading">
+						<h4>餐點內容</h4>
+					</div>
+					<div class="panel-body">
+						<div ng-repeat="item in food.order" class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12 vertical-align">
+								<?php echo '{{ item.name }} </div><div class="col-md-3 col-sm-3 col-xs-6 vertical-align"><span style="color: #0277BD">{{ item.price }}&nbsp</span>X {{ item.count }} = {{ item.price*item.count }}';?>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<button class='btn btn-default orderButton' ng-click='food.orderClick(item.name, item.price)' style='color: #FF5722'>
+									+
+								</button>
+								<button class='btn btn-default orderButton' ng-click='food.orderCancel(item.name, item.price)' style='color: #FF5722'>
+									－
+								</button>
+							</div>
+						</div>
+						<hr color="#78909C">
+						<div id="orderResult">
+							共 <?php echo '{{food.totalPrice}}';?> 元
+							<p>不要妄想店家會送來，<sapn class="smallBreak"><br></sapn>點完餐還是要自己去結帳喔！</p>
+						</div>
+					</div>
+				</div>
 					<?php
 						if (empty($menu[0]['category_name'])) {
 							echo '<table class="table table-striped table-hover">
@@ -45,7 +70,7 @@
 										<tr>
 											<td>品項</td>
 											<td>價錢</td>
-											<td>備註</td>
+											<td class="note">備註</td>
 										</tr>
 									</thead>
 									<tbody>'; 
@@ -54,10 +79,21 @@
 									echo "<tr>";
 								else
 									echo "<tr style='display:none'>";
-								echo "<td>".$item['name']."</td>";
-								echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick()' style='color: #FF5722'>+</button></td>";
+								echo "<td style='vertical-align: middle;'>".$item['name']."</td>";
+
+								if (empty($item['price'][0]['type']))
+									echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name']."\", ".$item['price'].")' style='color: #FF5722'>+</button></td>";
+								else {
+									echo "<td>";
+									foreach ($item['price'] as $key => $value) {
+										echo $value['type']." ".$value['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name'].$value['type']."\", ".$value['price'].")' style='color: #FF5722'>+</button>";
+									}
+									echo "</td>";
+								}
+
+								
 								if (!empty($item['note']))
-									echo "<td>".$item['note']."</td>";
+									echo "<td class='note'>".$item['note']."</td>";
 								else
 									echo "<td></td>";
 								echo "</tr>";
@@ -75,16 +111,26 @@
 										<tr>
 											<td>品項</td>
 											<td>價錢</td>
-											<td>備註</td>
+											<td class="note">備註</td>
 										</tr>
 									</thead>
 									<tbody>'; 
 								foreach ($category['items'] as $key => $item) {
 									echo "<tr>";
-									echo "<td>".$item['name']."</td>";
-									echo "<td>".$item['price']." <button class='btn btn-default orderButton' style='color: #FF5722'>+</button></td>";
+									echo "<td style='vertical-align: middle;'>".$item['name']."</td>";
+
+									if (empty($item['price'][0]['type']))
+										echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name']."\", ".$item['price'].")' style='color: #FF5722'>+</button></td>";
+									else {
+										echo "<td>";
+										foreach ($item['price'] as $key => $value) {
+											echo $value['type']." ".$value['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name'].$value['type']."\", ".$value['price'].")' style='color: #FF5722'>+</button>";
+										}
+										echo "</td>";
+									}
+									
 									if (!empty($item['note']))
-										echo "<td>".$item['note']."</td>";
+										echo "<td class='note'>".$item['note']."</td>";
 									else
 										echo "<td></td>";
 									echo "</tr>";
