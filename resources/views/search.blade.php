@@ -81,12 +81,16 @@
 									echo "<tr style='display:none'>";
 								echo "<td style='vertical-align: middle;'>".$item['name']."</td>";
 
-								if (empty($item['price'][0]['type']))
-									echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name']."\", ".$item['price'].")' style='color: #FF5722'>+</button></td>";
-								else {
+								if (empty($item['price'][0]['type'])) {
+									if (!empty($item['price']))
+										echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name']."\", ".$item['price'].")' style='color: #FF5722'>+</button></td>";
+								} else {
 									echo "<td>";
 									foreach ($item['price'] as $key => $value) {
-										echo $value['type']." ".$value['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name'].$value['type']."\", ".$value['price'].")' style='color: #FF5722'>+</button>";
+										if (!empty($value['price']))
+											echo $value['type']." ".$value['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name'].$value['type']."\", ".$value['price'].")' style='color: #FF5722'>+</button>";
+										else
+											echo $value['type'];
 									}
 									echo "</td>";
 								}
@@ -119,12 +123,16 @@
 									echo "<tr>";
 									echo "<td style='vertical-align: middle;'>".$item['name']."</td>";
 
-									if (empty($item['price'][0]['type']))
-										echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name']."\", ".$item['price'].")' style='color: #FF5722'>+</button></td>";
-									else {
+									if (empty($item['price'][0]['type'])) {
+										if (!empty($item['price']))
+											echo "<td>".$item['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name']."\", ".$item['price'].")' style='color: #FF5722'>+</button></td>";
+									} else {
 										echo "<td>";
 										foreach ($item['price'] as $key => $value) {
-											echo $value['type']." ".$value['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name'].$value['type']."\", ".$value['price'].")' style='color: #FF5722'>+</button>";
+											if (!empty($value['price']))
+												echo $value['type']." ".$value['price']."<button class='btn btn-default orderButton' ng-click='food.orderClick(\"".$item['name'].$value['type']."\", ".$value['price'].")' style='color: #FF5722'>+</button>";
+											else
+												echo $value['type'];
 										}
 										echo "</td>";
 									}
@@ -148,7 +156,7 @@
 			<hr>
 			<?php 
 				if (count($comments)) {
-					echo "<div id='comment' class='container'>";
+					echo "<div id='comment'>";
 					foreach ($comments as $index => $comment) {
 						$result = '';
 						if ($index < 1)
@@ -157,7 +165,7 @@
 							$result = "<div style='display: none' class='row'>";
 						$result .= "<div class='col-sm-1'><a href='".$comment['user']['link']."' target='_blank'><img src='http://graph.facebook.com/".$comment['user']['id']."/picture?type=square' class='img-circle' style='margin-top: 5px'></a></div>";
 						$result .= "<div class='col-sm-8'><a href='".$comment['user']['link']."' target='_blank'><h4>".$comment['user']['name']."</h4></a>";
-						$result .= "<p>".$comment['comment']."</p></div></div>";
+						$result .= "<p>".nl2br($comment['comment'])."</p></div></div>";
 
 						echo $result;				
 					}
@@ -166,7 +174,7 @@
 						echo "<button class='btn btn-default' style='color: white' id='showMoreCommentButton' onclick='showMoreComment()'>更多評論</button>";
 					echo $newCommentButton;
 				}else
-					echo "<div id='comment' class='container'></div><p id='noComment' style='display: inline'>目前暫無評論</p>".$newCommentButton;
+					echo "<div id='comment'></div><p id='noComment' style='display: inline'>目前暫無評論</p>".$newCommentButton;
 			?>
 		</div>
 	</div>
