@@ -14,6 +14,7 @@
 		<button class="btn btn-default pull-right" style="color: white" onclick="search()">查詢</button>
 	</div>
 	@include("categoryBox")
+	<div class="fb-share-button" data-href="http://www.ncufood.info/" data-layout="button_count"></div>
 	<?php if(!empty($message)) echo $message;?>
 	<?php echo view("footer"); ?>
 </div>
