@@ -18,7 +18,7 @@
 			if (!empty($type)) echo $type." ";
 			if (!empty($address)) echo $address." ";
 		?>" />
-	<meta property="og:image" content="<?php if(empty($metaImage)) echo "http://www.ncufood.info/image/indexMetaImage.png"; else echo $metaImage;?>"/>
+	<meta property="og:image" content="<?php if(empty($metaImage)) echo "http://www.ncufood.info/image/indexMetaImageNew.png"; else echo $metaImage;?>"/>
 	<meta property="og:type" content="article" />
 
 	<title>
