@@ -27,6 +27,7 @@ Route::group(['domain' => '{server}.ncufood.info'], function () {
 	Route::get('/drink', "SearchController@showDrink");
 	Route::get('/midnight-snack', "SearchController@showMidnightSnack");
 
+
 	Route::get('/auth/facebook', "CommentController@facebookLogin");
 	Route::post('/add-comment', "CommentController@addComment");
 	Route::post('/add-like', "CommentController@addLike");
