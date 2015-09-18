@@ -1,0 +1,257 @@
+@import "compass/css3";
+
+$large: 1200px;
+$medium: 992px;
+$small: 758px;
+$xsmall: 768px;
+
+$largeWidth: 1170px;
+$mediumWidth: 970px;
+$smallWidth: 750px;
+
+$textColor: white;
+
+html, body {
+	height: 100%;
+	width: 100%;
+
+	background: rgba(254,146,110,1);
+	background: -moz-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,146,110,1)), color-stop(100%, rgba(214,71,93,1)));
+	background: -webkit-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
+	background: -o-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
+	background: -ms-linear-gradient(top, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
+	background: linear-gradient(to bottom, rgba(254,146,110,1) 0%, rgba(214,71,93,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe926e', endColorstr='#d6475d', GradientType=0 );
+		
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	
+	//font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+
+	color: $textColor;
+
+}
+
+$searchHeight: 195px;
+$loginHeight: 450px;
+$width: 1170px;
+
+@media (min-width: $large) {
+	#search {
+		width: $width;
+		height: $searchHeight; 
+	}
+
+	.top {
+		position: absolute;
+		top: 5%;
+		left: 50%;
+		margin-left: -$largeWidth/2;
+	}
+
+	.center {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$searchHeight/2;
+	}
+
+	#feedbackButtons a {
+		color: $textColor;
+		float: right;
+	}
+
+	$width: 480px;
+
+	#loginView {
+		width: $width;
+		height: $loginHeight;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$loginHeight/2;
+	}
+
+	.smallBreak br {
+		display: none;
+	}
+}
+
+@media (min-width: $medium) {
+	$width: 970px;
+
+	#search {
+		width: $width;
+		height: $searchHeight; 
+	}
+
+	.top {
+		position: absolute;
+		top: 5%;
+		left: 50%;
+		margin-left: -$width/2;
+	}
+
+	.center {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$searchHeight/2;
+	}
+
+	#feedbackButtons a {
+		color: $textColor;
+		float: right;
+	}
+
+	$width: 480px;
+
+	#loginView {
+		width: $width;
+		height: $loginHeight;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$loginHeight/2;
+	}
+
+	.smallBreak br {
+		display: none;
+	}
+}
+
+@media (min-width: $small) {
+	$width: 750px;
+
+	#search {
+		width: $width;
+		height: $searchHeight; 
+	}
+
+	.top {
+		position: absolute;
+		top: 5%;
+		left: 50%;
+		margin-left: -$width/2;
+	}
+
+	.center {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$searchHeight/2;
+	}
+
+	#feedbackButtons a {
+		color: $textColor;
+		float: right;
+	}
+
+	$width: 480px;
+
+	#loginView {
+		width: $width;
+		height: $loginHeight;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$loginHeight/2;
+	}
+
+	.smallBreak br {
+		display: none;
+	}
+}
+
+@media (max-width: $xsmall) {
+	$width: 80%;
+
+	#search {
+		width: $width;
+		height: $searchHeight; 
+	}
+
+	.top {
+		position: absolute;
+		top: 5%;
+		left: 50%;
+		margin-left: -$width/2;
+	}
+
+	.center {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$searchHeight/2;
+	}
+
+	#feedbackButtons a {
+		color: $textColor;
+	}
+
+	#loginView {
+		width: $width;
+		height: $loginHeight;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -$width/2;
+		margin-top: -$loginHeight/2;
+	}
+}
+
+@media (max-width: 600px) {
+	.note {
+		display: none;
+	}
+}
+
+.form-control::-moz-placeholder {
+	color: white;
+}
+.form-control:-ms-input-placeholder {
+	color: white;
+}
+.form-control::-webkit-input-placeholder {
+	color: white;
+}
+
+#editMenuModal {
+	input {
+		margin-top: 5px;
+		height: 36px;
+	}
+
+	color: black;
+}
+
+#result {
+	margin-top: 80px;
+	position: relative;
+}
+
+#info {
+	hr {
+		display: block; 
+		height: 0.1px;
+	    border: 0; 
+	    border-top: 1px solid $textColor;
+	    margin: 1em 0; padding: 0; 
+	}
+
+	a { 
+		@include link-colors($textColor, $textColor, $textColor, $textColor, $textColor);
+	}
+}
