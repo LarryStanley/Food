@@ -1,6 +1,6 @@
 <div id="categoryBox">
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="#category" data-toggle="tab" class="btn btn-default"><h2>種類</h2></a></li>
+		<li><a href="#category" data-toggle="tab" class="btn btn-default"><h2>種類</h2></a></li>
 		<li><a href="#area" data-toggle="tab" class="btn btn-default"><h2>地區</h2></a></li>
 	</ul>
 	<div id="categoryTab" class="tab-content">
@@ -34,22 +34,28 @@
 		</div>
 		<div class="tab-pane fade" id="area" style="margin-bottom: 50px">
 			<div class="row">
-				<div class="col-md-2 col-sm-2">
+				<div class="col-md-2 col-sm-2 col-xs-6 text-center">
 					<a href="/宵夜街" class="btn btn-default btn-lg" style="color: white">宵夜街</a>
 				</div>
-				<div class="col-md-2 col-sm-2">
+				<div class="col-md-2 col-sm-2 col-xs-6 text-center">
 					<a href="後門" class="btn btn-default btn-lg" style="color: white">後門</a>
 				</div>
-				<div class="col-md-2 col-sm-2">
+				<div class="col-md-2 col-sm-2 col-xs-6 text-center">
 					<a href="/松苑" class="btn btn-default btn-lg" style="color: white">松苑</a>
 				</div>
-				<div class="col-md-2 col-sm-2">
+				<div class="col-md-2 col-sm-2 col-xs-6 text-center">
 					<a href="/九餐" class="btn btn-default btn-lg" style="color: white">九餐</a>
 				</div>
-				<div class="col-md-2 col-sm-2">
+				<div class="col-md-2 col-sm-2 col-xs-6 text-center">
+					<a href="/松果餐廳" class="btn btn-default btn-lg" style="color: white">松果餐廳</a>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-6 text-center">
 					<a href="/外送" class="btn btn-default btn-lg" style="color: white">外送</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	$('#categoryBox a[href="#<?php if(!empty($type)) echo $type;?>"]').tab('show');
+</script>

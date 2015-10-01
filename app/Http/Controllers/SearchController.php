@@ -224,7 +224,8 @@ class SearchController extends Controller
 
 		return view("category", array(
 			"title" => "早餐 - 中大美食",
-			"results" => $result
+			"results" => $result,
+			"type" => "category"
 		));
 	}
 
@@ -233,7 +234,8 @@ class SearchController extends Controller
 
 		return view("category", array(
 			"title" => "午晚餐 - 中大美食",
-			"results" => $result
+			"results" => $result,
+			"type" => "category"
 		));
 	}
 
@@ -242,7 +244,8 @@ class SearchController extends Controller
 
 		return view("category", array(
 			"title" => "飲料 - 中大美食",
-			"results" => $result
+			"results" => $result,
+			"type" => "category"
 		));
 	}
 
@@ -251,7 +254,74 @@ class SearchController extends Controller
 
 		return view("category", array(
 			"title" => "宵夜 - 中大美食",
-			"results" => $result
+			"results" => $result,
+			"type" => "category"
+		));
+	}
+
+	public function showSnackStreet() {
+		$result = DB::collection('Info')->where("location", "宵夜街")->orderBy('query_times', 'desc')->get();
+
+		return view("category", array(
+			"title" => "宵夜街 - 中大美食",
+			"results" => $result,
+			"query" => "宵夜街",
+			"type" => "area"
+		));
+	}
+
+	public function showBackDoor() {
+		$result = DB::collection('Info')->where("location", "後門")->orderBy('query_times', 'desc')->get();
+
+		return view("category", array(
+			"title" => "後門 - 中大美食",
+			"results" => $result,
+			"query" => "後門",
+			"type" => "area"
+		));
+	}
+
+	public function showStreet() {
+		$result = DB::collection('Info')->where("location", "松苑")->orderBy('query_times', 'desc')->get();
+
+		return view("category", array(
+			"title" => "松苑 - 中大美食",
+			"results" => $result,
+			"query" => "松苑",
+			"type" => "area"
+		));
+	}
+
+	public function showNine() {
+		$result = DB::collection('Info')->where("location", "九餐")->orderBy('query_times', 'desc')->get();
+
+		return view("category", array(
+			"title" => "九餐 - 中大美食",
+			"results" => $result,
+			"query" => "九餐",
+			"type" => "area"
+		));
+	}
+
+	public function showSeven() {
+		$result = DB::collection('Info')->where("location", "松果餐廳")->orderBy('query_times', 'desc')->get();
+
+		return view("category", array(
+			"title" => "松果餐廳 - 中大美食",
+			"results" => $result,
+			"query" => "松果餐廳",
+			"type" => "area"
+		));
+	}
+
+	public function showToGo() {
+		$result = DB::collection('Info')->where("location", "外送")->orderBy('query_times', 'desc')->get();
+
+		return view("category", array(
+			"title" => "外送 - 中大美食",
+			"results" => $result, 
+			"query" => "外送",
+			"type" => "area"
 		));
 	}
 

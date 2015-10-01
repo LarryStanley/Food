@@ -26,7 +26,12 @@ Route::group(['domain' => '{server}.ncufood.info'], function () {
 	Route::get('/dine', "SearchController@showDine");
 	Route::get('/drink', "SearchController@showDrink");
 	Route::get('/midnight-snack', "SearchController@showMidnightSnack");
-
+	Route::get('/宵夜街', "SearchController@showSnackStreet");
+	Route::get('/後門', "SearchController@showBackDoor");
+	Route::get('/松苑', "SearchController@showStreet");
+	Route::get('/九餐', "SearchController@showNine");
+	Route::get('/松果餐廳', "SearchController@showSeven");
+	Route::get('/外送', "SearchController@showToGo");
 
 	Route::get('/auth/facebook', "CommentController@facebookLogin");
 	Route::post('/add-comment', "CommentController@addComment");
