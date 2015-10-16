@@ -16,9 +16,33 @@ html, body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 	
-	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial, "メイリオ", "맑은 고딕", sans-serif !important;
 
 	color:white;
+}
+
+h1 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h2 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h3 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h4 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h5 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h6 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
 }
 
 @media (min-width: 1200px) {
