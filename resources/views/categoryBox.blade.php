@@ -57,5 +57,7 @@
 	</div>
 </div>
 <script>
-	$('#categoryBox a[href="#<?php if(!empty($type)) echo $type;?>"]').tab('show');
+	$(document).ready(function() {
+		$('#categoryBox a[href="#<?php if(!empty($type)) echo $type;?>"]').tab('show');
+	});
 </script>
