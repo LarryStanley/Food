@@ -157,7 +157,8 @@ class SearchController extends Controller
 					"metaImage" => $metaImage,
 					"coordinate" => $coordinate,
 					"ng_app" => "food",
-					"menu" => $menu));			
+					"menu" => $menu,
+					"relative" => $data['relative']));			
 			}else
 				return view("index", array(
 					"title" => $data['name']." - 中大美食",

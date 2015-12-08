@@ -179,6 +179,21 @@
 		</div>
 	</div>
 	<?php 
+		if ($relative) {
+			$result = '';
+			$result .= '<div class="well" id="relativeView">
+				<h2>看過「'.$name.'」<span class="smallBreak"><br></span>的人也看過</h2>
+				<hr>';
+			foreach ($relative as $key => $value) {
+				$result.= '<a href="'.$value['name'].'" class="btn btn-default" style="color:white">'.$value['name'].'</a>';
+				if ($key > 6)
+					break;
+			}
+
+			$result.= "</div>";
+			echo $result;
+		}
+
 		if ($recentView){
 			$result = '';
 			$result .= '<div class="well" id="recentView">
