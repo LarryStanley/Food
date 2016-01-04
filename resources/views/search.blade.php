@@ -179,7 +179,7 @@
 		</div>
 	</div>
 	<?php 
-		if ($relative) {
+		if (!empty($relative)) {
 			$result = '';
 			$result .= '<div class="well" id="relativeView">
 				<h2>看過「'.$name.'」<span class="smallBreak"><br></span>的人也看過</h2>
@@ -194,7 +194,7 @@
 			echo $result;
 		}
 
-		if ($recentView){
+		if (!empty($recentView)){
 			$result = '';
 			$result .= '<div class="well" id="recentView">
 				<h2>最近瀏覽</h2>

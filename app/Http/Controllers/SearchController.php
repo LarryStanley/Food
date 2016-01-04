@@ -140,6 +140,8 @@ class SearchController extends Controller
 
 				if (empty($data['priceInterval']))
 					$data['priceInterval'] = '';
+				if (empty($data['relative']))
+					$data['relative'] = '';
 
 				return view("search", array(
 					"title" => $data['name']." - 中大美食",
