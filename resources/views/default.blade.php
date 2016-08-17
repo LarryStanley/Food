@@ -65,7 +65,7 @@
 
 	<script src="/js/jquery.autocomplete.min.js" defer></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	<script src="/js/menu.js" defer></script>
 	<script src="/js/food.js" defer></script>
 	<script src="/js/main.js" defer></script>
