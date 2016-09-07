@@ -199,6 +199,12 @@ class SearchController extends Controller
 		return $data;
 	}
 
+	public function showAllRestaurantName() {
+		$data = DB::collection('Info')->lists("name");
+
+		return $data;
+	}
+
 	public function api($domain, $query) {
 		$data = DB::collection('Info')->where("name", "LIKE", "%".$query."%")->get();
 
@@ -260,6 +266,37 @@ class SearchController extends Controller
 			"results" => $result,
 			"type" => "category"
 		));
+	}
+
+	public function showBreakfastApi() {
+		$result = DB::collection('Info')->where("type", "早餐")->orderBy('query_times', 'desc')->get();
+
+		return $result;
+	}
+
+	public function showDineApi() {
+		$result = DB::collection('Info')->where("type", "午晚餐")->orderBy('query_times', 'desc')->get();
+
+		return $result;
+	}
+
+	public function showDrinkApi() {
+		$result = DB::collection('Info')->where("type", "飲料")->orderBy('query_times', 'desc')->get();
+
+		return $result;
+	}
+
+	public function showMidnightSnackApi() {
+		$result = DB::collection('Info')->where("type", "宵夜")->orderBy('query_times', 'desc')->get();
+
+		return $result;
+	}
+
+
+	public function showSnackStreetApi() {
+		$result = DB::collection('Info')->where("location", "宵夜街")->orderBy('query_times', 'desc')->get();
+
+		return $result;
 	}
 
 	public function showSnackStreet() {

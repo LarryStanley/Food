@@ -66,7 +66,14 @@ Route::group(['domain' => '{server}.ncufood.info'], function () {
 	Route::get('/query/{query}', "SearchController@queryPage");
 
 	Route::get('/api/all', "SearchController@showAllData");
+	Route::get('/api/all_name', "SearchController@showAllRestaurantName");
 	Route::get('/api/auto-complete', "SearchController@autoComplete");
+	Route::get('/api/breakfast', "SearchController@showBreakfastApi");
+	Route::get('/api/dine', "SearchController@showDineApi");
+	Route::get('/api/drink', "SearchController@showDrinkApi");
+	Route::get('/api/midnight-snack', "SearchController@showMidnightSnackApi");
+
 	Route::get('/api/{query}', "SearchController@api");
+
 	Route::get('/{query}', "SearchController@index"); 
 });
